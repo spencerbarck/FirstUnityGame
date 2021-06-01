@@ -207,6 +207,9 @@ public class Bird : MonoBehaviour
 
     private void OnMouseUp()
     {
+        //CameraManager cm = new CameraManager();
+        //cm.switchCamera();
+
         GetComponent<LineRenderer>().enabled = false;
         GetComponent<SpriteRenderer>().color = Color.white;
 

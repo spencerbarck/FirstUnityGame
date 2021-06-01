@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637577491935170949
-    m_Hash: 918907895
+      ticks: 637581267386919103
+    m_Hash: 951884115
   m_LockFileStatus:
     m_FilePath: C:/Users/S/UnityProjectsTest/HelloGame/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637577491935410700
-    m_Hash: 1932401740
+      ticks: 637581267387038979
+    m_Hash: 4052957293
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -634,6 +634,7 @@ m_PackageAssets:
         - 2.6.3-preview.2
         - 2.6.3
         - 2.6.4
+        - 2.6.5
         - 2.7.1
         - 2.7.2
         - 2.7.3
@@ -654,13 +655,14 @@ m_PackageAssets:
         - 2.6.3-preview.2
         - 2.6.3
         - 2.6.4
+        - 2.6.5
         - 2.7.1
         - 2.7.2
         - 2.7.3
         - 2.8.0-exp.1
         - 2.8.0-exp.2
         - 2.8.0-pre.1
-        verified: 2.6.4
+        verified: 2.6.5
       dependencies: []
       resolvedDependencies: []
       keywords:
@@ -706,24 +708,25 @@ m_PackageAssets:
         url: git+https://github.com/Unity-Technologies/com.unity.cinemachine.git
         revision: e272fa7acbab235a840c4e766b8e6099fa5cd76c
         path: 
-    - packageId: com.unity.collab-proxy@1.3.9
+    - packageId: com.unity.collab-proxy@1.5.7
       testable: 0
       isDirectDependency: 1
-      version: 1.3.9
+      version: 1.5.7
       source: 1
-      resolvedPath: C:\Users\S\UnityProjectsTest\HelloGame\Library\PackageCache\com.unity.collab-proxy@1.3.9
+      resolvedPath: C:\Users\S\UnityProjectsTest\HelloGame\Library\PackageCache\com.unity.collab-proxy@1.5.7
       assetPath: Packages/com.unity.collab-proxy
       name: com.unity.collab-proxy
-      displayName: Unity Collaborate
+      displayName: Version Control
       author:
         name: 
         email: 
         url: 
       category: Editor
       type: 
-      description: Collaborate with your teammates with the official version control
-        system for Unity. Collaborate is a simple way for teams to save, share, and
-        sync your Unity project.
+      description: The Version Control package gives you the ability to use either
+        Collaborate or Plastic SCM for Unity (beta) in the Unity editor. To use Plastic
+        SCM for Unity (beta), a Plastic SCM subscription is required. Learn more
+        about how you can get started for free by visiting plasticscm.com.
       status: 4
       errors: []
       versions:
@@ -757,7 +760,6 @@ m_PackageAssets:
         - 2.1.0-preview.5
         - 2.1.0-preview.6
         compatible:
-        - 1.3.9
         - 1.5.7
         - 2.0.0-preview.6
         - 2.0.0-preview.8
@@ -769,9 +771,13 @@ m_PackageAssets:
         - 2.1.0-preview.3
         - 2.1.0-preview.5
         - 2.1.0-preview.6
-        verified: 1.3.9
-      dependencies: []
-      resolvedDependencies: []
+        verified: 1.5.7
+      dependencies:
+      - name: com.unity.nuget.newtonsoft-json
+        version: 2.0.0
+      resolvedDependencies:
+      - name: com.unity.nuget.newtonsoft-json
+        version: 2.0.0
       keywords:
       - vsc
       - version
@@ -795,13 +801,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637314349270000000
+      datePublishedTicks: 637551413290000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.cloud.collaborate.git
-        revision: fa825106f349f996acff22f718845eab46ca2d7c
+        revision: f079d307344f568804d3ea6d781013135e614e45
         path: 
     - packageId: com.unity.ide.rider@2.0.7
       testable: 0
@@ -910,12 +916,12 @@ m_PackageAssets:
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.rider.git
         revision: abb44f053e9a41d2e00e149e32a19bcec76e98b4
         path: 
-    - packageId: com.unity.ide.visualstudio@2.0.7
+    - packageId: com.unity.ide.visualstudio@2.0.8
       testable: 0
       isDirectDependency: 1
-      version: 2.0.7
+      version: 2.0.8
       source: 1
-      resolvedPath: C:\Users\S\UnityProjectsTest\HelloGame\Library\PackageCache\com.unity.ide.visualstudio@2.0.7
+      resolvedPath: C:\Users\S\UnityProjectsTest\HelloGame\Library\PackageCache\com.unity.ide.visualstudio@2.0.8
       assetPath: Packages/com.unity.ide.visualstudio
       name: com.unity.ide.visualstudio
       displayName: Visual Studio Editor
@@ -945,6 +951,7 @@ m_PackageAssets:
         - 2.0.5
         - 2.0.7
         - 2.0.8
+        - 2.0.9
         compatible:
         - 1.0.2
         - 1.0.3
@@ -959,7 +966,8 @@ m_PackageAssets:
         - 2.0.5
         - 2.0.7
         - 2.0.8
-        verified: 2.0.8
+        - 2.0.9
+        verified: 2.0.9
       dependencies:
       - name: com.unity.test-framework
         version: 1.1.9
@@ -985,13 +993,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637486638490000000
+      datePublishedTicks: 637562620210000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.visualstudio.git
-        revision: dec282022c7a95fada560c36f53da9dd155a142c
+        revision: 5cdf5d932e6ecbbd83bbe6a40eec2a94b4979501
         path: 
     - packageId: com.unity.ide.vscode@1.2.3
       testable: 0
@@ -1061,6 +1069,116 @@ m_PackageAssets:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.vscode.git
         revision: b5ec9b38109e52b1b26597d521e4df75e042ebb9
+        path: 
+    - packageId: com.unity.inputsystem@1.0.2
+      testable: 0
+      isDirectDependency: 1
+      version: 1.0.2
+      source: 1
+      resolvedPath: C:\Users\S\UnityProjectsTest\HelloGame\Library\PackageCache\com.unity.inputsystem@1.0.2
+      assetPath: Packages/com.unity.inputsystem
+      name: com.unity.inputsystem
+      displayName: Input System
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: 
+      description: A new input system which can be used as a more extensible and
+        customizable alternative to Unity's classic input system in UnityEngine.Input.
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 0.1.2-preview
+        - 0.2.0-preview
+        - 0.2.1-preview
+        - 0.2.6-preview
+        - 0.2.8-preview
+        - 0.2.10-preview
+        - 0.9.0-preview
+        - 0.9.1-preview
+        - 0.9.2-preview
+        - 0.9.3-preview
+        - 0.9.4-preview
+        - 0.9.5-preview
+        - 0.9.6-preview
+        - 1.0.0-preview
+        - 1.0.0-preview.1
+        - 1.0.0-preview.2
+        - 1.0.0-preview.3
+        - 1.0.0-preview.4
+        - 1.0.0-preview.5
+        - 1.0.0-preview.6
+        - 1.0.0-preview.7
+        - 1.0.0
+        - 1.0.1
+        - 1.0.2
+        - 1.1.0-pre.5
+        - 1.1.0-preview.1
+        - 1.1.0-preview.2
+        - 1.1.0-preview.3
+        compatible:
+        - 0.1.2-preview
+        - 0.2.0-preview
+        - 0.2.1-preview
+        - 0.2.6-preview
+        - 0.2.8-preview
+        - 0.2.10-preview
+        - 0.9.0-preview
+        - 0.9.1-preview
+        - 0.9.2-preview
+        - 0.9.3-preview
+        - 0.9.4-preview
+        - 0.9.5-preview
+        - 0.9.6-preview
+        - 1.0.0-preview
+        - 1.0.0-preview.1
+        - 1.0.0-preview.2
+        - 1.0.0-preview.3
+        - 1.0.0-preview.4
+        - 1.0.0-preview.5
+        - 1.0.0-preview.6
+        - 1.0.0-preview.7
+        - 1.0.0
+        - 1.0.1
+        - 1.0.2
+        - 1.1.0-pre.5
+        - 1.1.0-preview.1
+        - 1.1.0-preview.2
+        - 1.1.0-preview.3
+        verified: 1.0.2
+      dependencies: []
+      resolvedDependencies: []
+      keywords:
+      - input
+      - events
+      - keyboard
+      - mouse
+      - gamepad
+      - touch
+      - vr
+      - xr
+      registry:
+        id: main
+        name: 
+        url: https://packages.unity.com
+        scopes: []
+        isDefault: 1
+        capabilities: 7
+      hasRegistry: 1
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 637468486210000000
+      documentationUrl: 
+      hasRepository: 1
+      repository:
+        type: git
+        url: git+https://github.com/Unity-Technologies/InputSystem.git
+        revision: 041def76515febb36a83d1f928cfb7aefb85176c
         path: 
     - packageId: com.unity.test-framework@1.1.24
       testable: 0
@@ -1152,12 +1270,12 @@ m_PackageAssets:
         url: git+https://github.com/Unity-Technologies/com.unity.test-framework.git
         revision: e6fe8892689398c0d9aba4587e0ba69edc3d82b8
         path: 
-    - packageId: com.unity.textmeshpro@3.0.4
+    - packageId: com.unity.textmeshpro@3.0.6
       testable: 0
       isDirectDependency: 1
-      version: 3.0.4
+      version: 3.0.6
       source: 1
-      resolvedPath: C:\Users\S\UnityProjectsTest\HelloGame\Library\PackageCache\com.unity.textmeshpro@3.0.4
+      resolvedPath: C:\Users\S\UnityProjectsTest\HelloGame\Library\PackageCache\com.unity.textmeshpro@3.0.6
       assetPath: Packages/com.unity.textmeshpro
       name: com.unity.textmeshpro
       displayName: TextMeshPro
@@ -1269,10 +1387,6 @@ m_PackageAssets:
         - 3.0.5
         - 3.0.6
         compatible:
-        - 3.0.1
-        - 3.0.3
-        - 3.0.4
-        - 3.0.5
         - 3.0.6
         verified: 3.0.6
       dependencies:
@@ -1303,20 +1417,20 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637492944820000000
+      datePublishedTicks: 637547111200000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.textmeshpro.git
-        revision: e2f8dffb26de9a130d5b2140d83891d9a7825330
+        revision: 01e57e3b7de18af9dfe9baaa0a0ff5cc4765c899
         path: 
-    - packageId: com.unity.timeline@1.4.7
+    - packageId: com.unity.timeline@1.4.8
       testable: 0
       isDirectDependency: 1
-      version: 1.4.7
+      version: 1.4.8
       source: 1
-      resolvedPath: C:\Users\S\UnityProjectsTest\HelloGame\Library\PackageCache\com.unity.timeline@1.4.7
+      resolvedPath: C:\Users\S\UnityProjectsTest\HelloGame\Library\PackageCache\com.unity.timeline@1.4.8
       assetPath: Packages/com.unity.timeline
       name: com.unity.timeline
       displayName: Timeline
@@ -1395,7 +1509,6 @@ m_PackageAssets:
         - 1.6.0-pre.4
         - 1.6.0-pre.5
         compatible:
-        - 1.4.7
         - 1.4.8
         - 1.5.0-pre.2
         - 1.5.0-preview.1
@@ -1450,13 +1563,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637516874380000000
+      datePublishedTicks: 637557616100000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.timeline.git
-        revision: 66f96ddbbc76f565093e1e5e5d3d322d28acc7d7
+        revision: 527e4364e28028f20f04fc51db671eb4bb910a26
         path: 
     - packageId: com.unity.ugui@1.0.0
       testable: 0
@@ -3324,6 +3437,80 @@ m_PackageAssets:
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ext.nunit.git
         revision: 29ea4d6504a5f58fb3a6934db839aa80ae6d9d88
         path: 
+    - packageId: com.unity.nuget.newtonsoft-json@2.0.0
+      testable: 0
+      isDirectDependency: 0
+      version: 2.0.0
+      source: 1
+      resolvedPath: C:\Users\S\UnityProjectsTest\HelloGame\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0
+      assetPath: Packages/com.unity.nuget.newtonsoft-json
+      name: com.unity.nuget.newtonsoft-json
+      displayName: Newtonsoft Json
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: 
+      description: 'Newtonsoft Json for use in Unity projects and Unity packages.
+        Currently synced to version 12.0.2.
+
+
+        This package is used for advanced
+        json serialization and deserialization. Most Unity users will be better suited
+        using the existing json tools built into Unity.
+
+        To avoid assembly
+        clashes, please use this package if you intend to use Newtonsoft Json.'
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 1.0.0-preview.2
+        - 1.0.0-preview.3
+        - 1.0.0-preview.4
+        - 1.0.1-preview.1
+        - 1.1.2
+        - 2.0.0-preview
+        - 2.0.0-preview.1
+        - 2.0.0-preview.2
+        - 2.0.0
+        - 2.0.1-preview.1
+        compatible:
+        - 1.0.0-preview.2
+        - 1.0.0-preview.3
+        - 1.0.0-preview.4
+        - 1.0.1-preview.1
+        - 1.1.2
+        - 2.0.0-preview
+        - 2.0.0-preview.1
+        - 2.0.0-preview.2
+        - 2.0.0
+        - 2.0.1-preview.1
+        verified: 2.0.0
+      dependencies: []
+      resolvedDependencies: []
+      keywords: []
+      registry:
+        id: main
+        name: 
+        url: https://packages.unity.com
+        scopes: []
+        isDefault: 1
+        capabilities: 7
+      hasRegistry: 1
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 637237898320000000
+      documentationUrl: 
+      hasRepository: 1
+      repository:
+        type: git
+        url: https://github.cds.internal.unity3d.com/unity/com.unity.nuget.newtonsoft-json.git
+        revision: d2fd6ed876261bbd82f59199ad711e7667bf633a
+        path: 
     - packageId: com.unity.mathematics@1.1.0
       testable: 0
       isDirectDependency: 0
@@ -3553,4 +3740,4 @@ m_PackageAssets:
   m_LocalPackages:
     m_LocalFileStatus: []
 m_ProjectPath: C:/Users/S/UnityProjectsTest/HelloGame/Packages
-m_EditorVersion: 2020.3.7f1 (dd97f2c94397)
+m_EditorVersion: 2020.3.10f1 (297d780c91bc)
