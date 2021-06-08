@@ -12,7 +12,7 @@ public class LevelController : MonoBehaviour
     private bool _levelOver;
     private float _levelOverTimer;
 
-    private bool _musicPlaying;
+    private bool _musicPlaying = false;
     private void OnEnable()
     {
         _enemies = FindObjectsOfType<FlowerMonster>();
