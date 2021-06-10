@@ -7,12 +7,14 @@ public class LevelControlScript : MonoBehaviour
     private static bool _gameOver;
     private StarfishEnemy[] _enemies;
     private PufferFishEnemy[] _pickups;
+    private PorcupinePufferEnemy[] _pickups2;
     private SquidPlayer _player;
     public Text _speedText;
     public Text _starFishText;
     public Text _pufferFishText;
     public Text _winLoseText;
     public Text _finalSpeedText;
+    public Text _levelNumber;
     private bool _winState;
     private bool _loseState;
     private bool _endState;
@@ -26,10 +28,14 @@ public class LevelControlScript : MonoBehaviour
         _starFishCount = _enemies.Length;
         _pickups = FindObjectsOfType<PufferFishEnemy>();
         _pufferFishCount = _pickups.Length;
+        _pickups2 = FindObjectsOfType<PorcupinePufferEnemy>();
+        _pufferFishCount += _pickups2.Length;
 
         _player = FindObjectOfType<SquidPlayer>();
         _winLoseText.text = "";
         _finalSpeedText.text = "";
+
+        _levelNumber.text = SceneManager.GetActiveScene().buildIndex.ToString();
     }
     void Start()
     {
@@ -63,6 +69,13 @@ public class LevelControlScript : MonoBehaviour
             }
             int localPufferFishCount = 0;
             foreach(PufferFishEnemy pickup in _pickups)
+            {
+                if(pickup != null)
+                {
+                    localPufferFishCount++;
+                }
+            }
+            foreach(PorcupinePufferEnemy pickup in _pickups2)
             {
                 if(pickup != null)
                 {

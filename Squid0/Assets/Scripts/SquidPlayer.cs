@@ -6,9 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class SquidPlayer : MonoBehaviour
 {
+    //CuddleFish Collide?
     private Playerinput _input;
     private Vector2 _moveAxis;
     [SerializeField]private float _speed = 2;
+    private bool _inTheWeeds;
+    private bool _leftWeeds;
+    [SerializeField]
+    private float _weedSlowFactor = 4;
     public float getSpeed()
     {
         return _speed;
@@ -71,12 +76,39 @@ public class SquidPlayer : MonoBehaviour
             }else _speed+=2;
             SoundManagerScript.PlaySound("StarfishPickup");
             transform.eulerAngles = new Vector3(0,0,0);
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
+        }
+        else if(collision.collider.GetComponent<JumboShrimpEnemy>() != null)
+        {
+            Vector2 characterScale = transform.localScale * 2;
+            transform.localScale = characterScale;
+            SoundManagerScript.PlaySound("PufferfishPickup");
+            transform.eulerAngles = new Vector3(0,0,0);
         }
         else if(collision.collider.GetComponent<PufferFishEnemy>() != null)
         {
             _speed = _speed / 2;
             SoundManagerScript.PlaySound("PufferfishPickup");
             transform.eulerAngles = new Vector3(0,0,0);
+        }
+        else if(collision.collider.GetComponent<SeaWeed>() != null)
+        {
+            _inTheWeeds=true;
+        }
+        else if(collision.collider.GetComponent<PorcupinePufferEnemy>() != null)
+        {
+            PorcupinePufferEnemy ppe = collision.collider.GetComponent<PorcupinePufferEnemy>();
+            if(ppe.GetIsSpiked())
+            {
+                SoundManagerScript.PlaySound("Death");
+                Destroy(gameObject);
+            }
+            else
+            {
+                _speed = _speed / 2;
+                SoundManagerScript.PlaySound("PufferfishPickup");
+                transform.eulerAngles = new Vector3(0,0,0);
+            }
         }
         else
         {
@@ -85,8 +117,31 @@ public class SquidPlayer : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.collider.GetComponent<SeaWeed>() != null)_leftWeeds=false;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.collider.GetComponent<SeaWeed>() != null)_leftWeeds = true;
+    }
+
     private void Update()
     {
-        transform.position += new Vector3(_moveAxis.x * Time.deltaTime * _speed,_moveAxis.y * Time.deltaTime * _speed);
+        if(_leftWeeds)
+        {
+            _inTheWeeds=false;
+            _leftWeeds=false;
+        }
+
+        if(_inTheWeeds){
+            float weedSpeed = _speed/_weedSlowFactor;
+            transform.position += new Vector3(_moveAxis.x * Time.deltaTime * weedSpeed,_moveAxis.y * Time.deltaTime * weedSpeed);
+        }
+        else
+        {
+            transform.position += new Vector3(_moveAxis.x * Time.deltaTime * _speed,_moveAxis.y * Time.deltaTime * _speed);
+        }
     }
 }
