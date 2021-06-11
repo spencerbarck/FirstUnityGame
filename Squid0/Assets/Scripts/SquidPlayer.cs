@@ -95,6 +95,21 @@ public class SquidPlayer : MonoBehaviour
         {
             _inTheWeeds=true;
         }
+        else if(collision.collider.GetComponent<ReefWeed>() != null)
+        {
+            Vector3 hit = collision.contacts[0].normal;
+            float angle = Vector3.Angle(hit, Vector3.up);
+
+            if(Mathf.Approximately(angle, 90)){
+                Vector3 cross = Vector3.Cross(Vector3.forward, hit);
+                if (cross.y >= 0)
+                {
+                    SoundManagerScript.PlaySound("Death");
+                    Destroy(gameObject);
+                }
+            }
+            _inTheWeeds=true;
+        }
         else if(collision.collider.GetComponent<PorcupinePufferEnemy>() != null)
         {
             PorcupinePufferEnemy ppe = collision.collider.GetComponent<PorcupinePufferEnemy>();
@@ -120,11 +135,13 @@ public class SquidPlayer : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         if(collision.collider.GetComponent<SeaWeed>() != null)_leftWeeds=false;
+        if(collision.collider.GetComponent<ReefWeed>() != null)_leftWeeds=false;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         if(collision.collider.GetComponent<SeaWeed>() != null)_leftWeeds = true;
+        if(collision.collider.GetComponent<ReefWeed>() != null)_leftWeeds=true;
     }
 
     private void Update()
