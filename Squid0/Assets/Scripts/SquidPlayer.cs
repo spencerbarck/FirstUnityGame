@@ -43,6 +43,7 @@ public class SquidPlayer : MonoBehaviour
     private void HandleFire(InputAction.CallbackContext context)
     {
     }
+    
     private void Move(Vector2 direction)
     {
         _moveAxis = direction;
