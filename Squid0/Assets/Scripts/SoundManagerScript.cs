@@ -10,6 +10,7 @@ public class SoundManagerScript : MonoBehaviour
     public static AudioClip _winSounds;
     public static AudioClip _dieSounds;
     public static AudioClip _levelStartSound;
+    public static AudioClip _pearlPickupSound;
     public static AudioSource _audioSource;
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class SoundManagerScript : MonoBehaviour
         _winSounds = Resources.Load<AudioClip> ("Win");
         _pufferfishPickupSounds = Resources.Load<AudioClip> ("PufferfishPickup");
         _levelStartSound = Resources.Load<AudioClip> ("LevelStart");
+        _pearlPickupSound = Resources.Load<AudioClip> ("PearlPickup");
 
         _audioSource = GetComponent<AudioSource> ();
     }
@@ -44,6 +46,9 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "Win":
                 _audioSource.PlayOneShot(_winSounds);
+                break;
+            case "PearlPickup":
+                _audioSource.PlayOneShot(_pearlPickupSound);
                 break;
         }
     }

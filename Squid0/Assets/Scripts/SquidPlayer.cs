@@ -14,6 +14,7 @@ public class SquidPlayer : MonoBehaviour
     private bool _leftWeeds;
     [SerializeField]
     private float _weedSlowFactor = 4;
+    private Rigidbody2D rb;
     public float getSpeed()
     {
         return _speed;
@@ -22,6 +23,11 @@ public class SquidPlayer : MonoBehaviour
     {
         _input = new Playerinput();
         _input.Squid.Movement.performed += ctx => Move(ctx.ReadValue<Vector2>());
+    }
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void OnEnable()
@@ -86,6 +92,31 @@ public class SquidPlayer : MonoBehaviour
             SoundManagerScript.PlaySound("PufferfishPickup");
             transform.eulerAngles = new Vector3(0,0,0);
         }
+        else if(collision.collider.GetComponent<Teleboarder>() != null)
+        {
+            Vector2 velocity = rb.velocity;
+            Teleboarder tB = collision.collider.GetComponent<Teleboarder>();
+            if(tB.transform.position.y>2)
+            {
+                transform.position += new Vector3(0,-24f);
+                rb.velocity = new Vector2(0,velocity.y);
+            } 
+            if(tB.transform.position.y<-2)
+            {
+                transform.position += new Vector3(0,24f);
+                rb.velocity = new Vector2(0,velocity.y);
+            }
+            if(tB.transform.position.x<-20) 
+            {
+                transform.position += new Vector3(44f,0);
+                rb.velocity = new Vector2(velocity.x,0);
+            }
+            if(tB.transform.position.x>20)
+            {
+                transform.position += new Vector3(-44f,0);
+                rb.velocity = new Vector2(velocity.x,0);
+            }
+        }
         else if(collision.collider.GetComponent<PufferFishEnemy>() != null)
         {
             _speed = _speed / 2;
@@ -95,6 +126,10 @@ public class SquidPlayer : MonoBehaviour
         else if(collision.collider.GetComponent<SeaWeed>() != null)
         {
             _inTheWeeds=true;
+        }
+        else if(collision.collider.GetComponent<PearlPickup>() != null)
+        {
+            SoundManagerScript.PlaySound("PearlPickup");
         }
         else if(collision.collider.GetComponent<ReefWeed>() != null)
         {
