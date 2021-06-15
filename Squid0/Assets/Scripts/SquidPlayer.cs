@@ -89,7 +89,7 @@ public class SquidPlayer : MonoBehaviour
         {
             Vector2 characterScale = transform.localScale * 2;
             transform.localScale = characterScale;
-            SoundManagerScript.PlaySound("PufferfishPickup");
+            SoundManagerScript.PlaySound("ShrimpPickup");
             transform.eulerAngles = new Vector3(0,0,0);
         }
         else if(collision.collider.GetComponent<Teleboarder>() != null)
