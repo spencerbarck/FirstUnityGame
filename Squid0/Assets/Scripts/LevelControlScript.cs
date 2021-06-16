@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections;
 
 public class LevelControlScript : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class LevelControlScript : MonoBehaviour
     private PufferFishEnemy[] _pickups;
     private PorcupinePufferEnemy[] _pickups2;
     private SquidPlayer _player;
+    public Animator _animator;
     public Text _speedText;
     public Text _starFishText;
     public Text _pufferFishText;
@@ -116,11 +118,26 @@ public class LevelControlScript : MonoBehaviour
 
         if((_levelOverTimer>2)&& _loseState)
         {
-            string currentSceneName = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(currentSceneName);
+            LoadThisLevel();
         }else if((_levelOverTimer>2)&& _winState)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            LoadNextLevel();
         }
+    }
+    public void LoadNextLevel()
+    {
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+    }
+    public void LoadThisLevel()
+    {
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex));
+    }
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        _animator.SetTrigger("LevelOver");
+        
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(levelIndex);
     }
 }
