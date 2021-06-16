@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.InputSystem;
 
 public class LevelControlScript : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class LevelControlScript : MonoBehaviour
     public Text _pufferFishText;
     public Text _winLoseText;
     public Text _finalSpeedText;
+    public Text _continueText;
     public Text _levelNumber;
     private bool _winState;
     private bool _loseState;
@@ -99,6 +101,7 @@ public class LevelControlScript : MonoBehaviour
             Debug.Log("You win");
             SoundManagerScript.PlaySound("Win");
             _finalSpeedText.text = "Final Speed: " + _player.getSpeed()*100;
+            _continueText.text = "Press Space To Continue";
             _winLoseText.text = "Squid Wins";
             _player.HaltSquidForWin();
         }
@@ -108,6 +111,7 @@ public class LevelControlScript : MonoBehaviour
             Debug.Log("You lose");
             SoundManagerScript.PlaySound("Death");
             _finalSpeedText.text = "Final Speed: " + _player.getSpeed()*100;
+            _continueText.text = "Press Space To Restart";
             _winLoseText.text = "Squid Loses";
         }
 
@@ -116,12 +120,14 @@ public class LevelControlScript : MonoBehaviour
             _levelOverTimer+=Time.deltaTime;
         }
 
-        if((_levelOverTimer>2)&& _loseState)
+        //if((_levelOverTimer>2)&& _loseState)
+        if(_loseState)
         {
-            LoadThisLevel();
-        }else if((_levelOverTimer>2)&& _winState)
+            if(InputSystem.GetDevice<Keyboard>().spaceKey.wasPressedThisFrame)LoadThisLevel();
+        }//else if((_levelOverTimer>2)&& _winState)
+        else if(_winState)
         {
-            LoadNextLevel();
+            if(InputSystem.GetDevice<Keyboard>().spaceKey.wasPressedThisFrame)LoadNextLevel();
         }
     }
     public void LoadNextLevel()
