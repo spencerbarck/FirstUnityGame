@@ -83,7 +83,6 @@ public class LevelControlScript : MonoBehaviour
                 }
             }
 
-
             if(!hasEnemy)
             {
                 _endState = true;

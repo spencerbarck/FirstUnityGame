@@ -8,7 +8,12 @@ public class JumboShrimpEnemy : MonoBehaviour
     {
         if(collision.collider.GetComponent<SquidPlayer>() != null)
         {
-            Destroy(gameObject);
+            Debug.Log("Hit " + collision.collider.GetComponent<SquidPlayer>()._isLarge);
+            if(!(collision.collider.GetComponent<SquidPlayer>()._isLarge==true))
+            {
+                Debug.Log("Destroy");
+                Destroy(gameObject);
+            }
         }
     }
 }

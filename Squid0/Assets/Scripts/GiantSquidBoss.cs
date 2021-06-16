@@ -4,23 +4,45 @@ using UnityEngine;
 
 public class GiantSquidBoss : MonoBehaviour
 {
-    [SerializeField] float _speed = -10;
-    float _initialSpeed;
+
+    //timer variables
     float _tiltTimer;
     float _tiltTime = 7.75f;
-    [SerializeField] float _waitAttackTimer;
+    float _waitAttackTimer;
     float _waitAttackTime = 3f;
+    float _rotateStopTimer = 0.25f;
+    float _rotateStopTime = 0.25f;
+    //end timer variables
+
+    //speed variables
+    [SerializeField] float _speed = -10;
+    float _initialSpeed;
     float _tiltSpeed = 0.05f;
-    bool _tiltingUp = true;
+    //end speed variables
+
+    //movement variables
+    bool _tiltingUp = false;
     bool _pointingUp;
-    bool _atStart = true;
-    int _attackCount;
-    [SerializeField] int _numberOfAttacks = 3;
-    Vector3 _initialPosition;
-    bool _attackChosen = false;
-    int _randomAttack;
     bool _swayingLeft;
-    bool _firstAttackDone;
+    Vector3 _initialPosition;
+
+    int _rotateQuarter=0;
+    //end movement variables
+
+    //attack variables
+    int _attackCount;
+    int _numberOfAttacks = 3; //number of attacks per attack type (SmallTiltLeftAttack strikes left x times)
+    int _randomAttack;
+    bool _attackChosen = false;
+    bool _firstAttackDone;//used to make sure the first attack is SmallTiltLeftAttack
+    bool _tenticlesExtended;
+    int _lastAttack;
+    //end attack variables
+    public Animator _squidAnimator;
+    public PolygonCollider2D _squidColliderTenticlesUp;
+    public PolygonCollider2D _squidColliderTenticlesDown;
+
+    bool _atStart = true;
     void Start()
     {
         _initialPosition=transform.position;
@@ -32,13 +54,18 @@ public class GiantSquidBoss : MonoBehaviour
         _tiltTimer+=Time.deltaTime;
         if(!_attackChosen)
         {
-            _randomAttack = Random.Range(1, 3);
+            _randomAttack=_lastAttack;
+            while(_randomAttack==_lastAttack)
+            {
+                _randomAttack = Random.Range(1, 4);
+            }
             _attackChosen=true;
             if(!_firstAttackDone)
             {
                 _randomAttack=1;
                 _firstAttackDone=true;
             }
+            _lastAttack = _randomAttack;
         }
         switch(_randomAttack){
             case 1:
@@ -47,6 +74,117 @@ public class GiantSquidBoss : MonoBehaviour
             case 2:
                 LargeTiltUpAttack();
                 break;
+            case 3:
+                SpinTenticleAttack();
+                break;
+        }
+    }
+
+    private void SpinTenticleAttack()
+    {
+        if(_waitAttackTimer<=0.01f)
+        {
+            _tenticlesExtended = true;
+            _squidAnimator.SetBool("TenticlesExtended",true);
+            _squidColliderTenticlesDown.enabled=true;
+            _squidColliderTenticlesUp.enabled=false;
+            _atStart=false;
+        }
+        _waitAttackTimer+=Time.deltaTime;
+
+        if(_waitAttackTimer>_waitAttackTime)
+        {
+                FullSpin();
+        }
+    }
+
+    private void FullSpin()
+    {
+        if(!_atStart)
+        {
+            if(_rotateStopTimer<_rotateStopTime)
+            {
+                _rotateStopTimer+=Time.deltaTime;
+            }
+            else
+            {
+                if(_rotateQuarter==0)
+                {
+                    if((transform.rotation.eulerAngles.z>315.0f)||(transform.rotation.eulerAngles.z<=45f))
+                    {
+                        transform.Rotate(0,0,0.2f*-1,Space.Self); 
+                    }
+                    else
+                    {
+                        _rotateQuarter++;
+                        _rotateStopTimer = 0;
+                    }
+                }
+                if(_rotateQuarter==1)
+                {
+                    if((transform.rotation.eulerAngles.z>225.0f))
+                    {
+                        transform.Rotate(0,0,0.2f*-1,Space.Self); 
+                    }
+                    else
+                    {
+                        _rotateQuarter++;
+                        _rotateStopTimer = 0;
+                    }
+                }
+                if(_rotateQuarter==2)
+                {
+                    if((transform.rotation.eulerAngles.z>135.0f))
+                    {
+                        transform.Rotate(0,0,0.2f*-1,Space.Self); 
+                    }
+                    else
+                    {
+                        _rotateQuarter++;
+                        _rotateStopTimer = 0;
+                    }
+                }
+                if(_rotateQuarter==3)
+                {
+                    if((transform.rotation.eulerAngles.z>45.0f))
+                    {
+                        transform.Rotate(0,0,0.2f*-1,Space.Self); 
+                    }
+                    else
+                    {
+                        _rotateQuarter++;
+                        _rotateStopTimer = 0;
+                    }
+                }
+                if(_rotateQuarter==4)
+                {
+                    if(_attackCount>=_numberOfAttacks-1) 
+                    {
+                        if(transform.rotation.eulerAngles.z<=45f)
+                        {
+                            transform.Rotate(0,0,0.2f*-1,Space.Self); 
+                        }
+                        else _atStart=true;
+                    }
+                    else
+                    {
+                        _rotateQuarter=0;
+                        _attackCount++;
+                    }
+                }       
+            }
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(0,0,0);
+            _tenticlesExtended = false;
+            _squidAnimator.SetBool("TenticlesExtended",false);
+            _squidColliderTenticlesDown.enabled=false;
+            _squidColliderTenticlesUp.enabled=true;
+            
+            _attackCount=0;
+            _waitAttackTimer=0.01f;
+            _attackChosen=false;
         }
     }
 
@@ -198,6 +336,8 @@ public class GiantSquidBoss : MonoBehaviour
                 //random attacks in the three lanes
                 int randAttack = Random.Range(1, 4);
                 if(_attackCount==_numberOfAttacks) randAttack=2;
+                if(_attackCount==1) randAttack=1;
+                if(_attackCount==2) randAttack=3;
                 switch(randAttack){
                     case 1:
                         transform.position=new Vector3(30,_initialPosition.y+6);
@@ -304,6 +444,7 @@ public class GiantSquidBoss : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if(collision.collider.GetComponent<SquidPlayer>() == null)
         Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
     }
 }
