@@ -23,8 +23,7 @@ public class TurtleObject : MonoBehaviour
         {
             _speed = _speed * -1;
             Vector2 characterScale = transform.localScale;
-            if(_upAndDown) characterScale.y = characterScale.y*-1;
-            else characterScale.x = characterScale.x*-1;
+            characterScale.y = characterScale.y*-1;
             transform.localScale = characterScale;
         }
         else

@@ -16,6 +16,7 @@ public class SquidPlayer : MonoBehaviour
     private float _weedSlowFactor = 4;
     private Rigidbody2D rb;
     public bool _isLarge;
+    public int _sizeFactor=1;
     private float _shrinkDeathTimer;
     [SerializeField]
     private bool _insideBoss;
@@ -91,15 +92,8 @@ public class SquidPlayer : MonoBehaviour
         }
         else if(collision.collider.GetComponent<JumboShrimpEnemy>() != null)
         {
-            if(!_isLarge)
-            {
-                Debug.Log("Is Large? "+_isLarge);
-                Vector2 characterScale = transform.localScale * 2;
-                transform.localScale = characterScale;
-                SoundManagerScript.PlaySound("ShrimpPickup");
-                transform.eulerAngles = new Vector3(0,0,0);
-                _isLarge=true;
-            }
+            Enlarge();
+            SoundManagerScript.PlaySound("ShrimpPickup");
         }
         else if(collision.collider.GetComponent<Teleboarder>() != null)
         {
@@ -176,18 +170,32 @@ public class SquidPlayer : MonoBehaviour
             {
                 if(_isLarge)
                 {
-                    Vector2 characterScale = transform.localScale / 2;
-                    transform.localScale = characterScale;
                     _insideBoss = true;
-                    _isLarge=false;
-                    SoundManagerScript.PlaySound("Shrink");
+                    Shrink();
                 }
                 else
                 {
+                    Debug.Log("Before Hit:"+_sizeFactor);
                     SoundManagerScript.PlaySound("Death");
                     Destroy(gameObject);
                 }
             }
+        }
+        else if(((collision.collider.GetComponent<LobsterEnemy>() != null)||
+            (collision.collider.GetComponent<CrabEnemy>() != null))&&_isLarge)
+        {
+            Shrink();
+            Destroy(collision.collider.gameObject);
+        }
+        else if((collision.collider.GetComponent<TunaObject>() != null)&&_sizeFactor>2)
+        {
+            Shrink();
+            Destroy(collision.collider.gameObject);
+        }
+        else if((collision.collider.GetComponent<TurtleObject>() != null)&&_sizeFactor>3)
+        {
+            Shrink();
+            Destroy(collision.collider.gameObject);
         }
         else
         {
@@ -196,6 +204,24 @@ public class SquidPlayer : MonoBehaviour
             SoundManagerScript.PlaySound("Death");
             Destroy(gameObject);
         }
+    }
+
+    private void Shrink()
+    {
+        Vector2 characterScale = transform.localScale / 2;
+        transform.localScale = characterScale;
+        _sizeFactor--;
+        if(_sizeFactor==1)_isLarge=false;
+        SoundManagerScript.PlaySound("Shrink");
+    }
+
+    private void Enlarge()
+    {
+        Vector2 characterScale = transform.localScale * 2;
+        transform.localScale = characterScale;
+        transform.eulerAngles = new Vector3(0,0,0);
+        _isLarge=true;
+        _sizeFactor++;
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -222,7 +248,11 @@ public class SquidPlayer : MonoBehaviour
         if(_insideBoss)
         {
             _shrinkDeathTimer+=Time.deltaTime;
-            if(_shrinkDeathTimer>0.5)_insideBoss=false;
+            if(_shrinkDeathTimer>0.5)
+            {
+                _insideBoss=false;
+                _shrinkDeathTimer=0;
+            }
         }
 
         if(_inTheWeeds){
