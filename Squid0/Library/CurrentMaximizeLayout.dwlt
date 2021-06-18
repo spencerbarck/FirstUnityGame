@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 739, y: 492}
   m_MaxSize: {x: 24004, y: 14042}
   vertical: 0
-  controlID: 124904
+  controlID: 2792
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_MinSize: {x: 463, y: 492}
   m_MaxSize: {x: 20003, y: 14042}
   vertical: 1
-  controlID: 124905
+  controlID: 2749
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 124868
+  controlID: 2677
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -220,7 +220,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 6829feff1e43feff6c47feff6c4ffeffba53feff0eb6feff46bafeff58bafeff5cbafeff6ebafeffa0bffeff36d4feff24ecfeffecf4feffdafffeffdcfffeff0000ffffc000ffffc61cffffe43effff5047ffff6247ffff4a48ffff7c4cffff1a55ffff6077ffff6478ffffb88cffff0a97ffff309affff9aa2ffff70a4ffffb4b2ffff24b3ffff52b3ffff24b6ffff84ceffff96ceffff9aceffff9ccfffffecd1ffff14d4ffffead5ffffcad7ffffead7ffffccd9ffffa2dbffffeadfffff0ae0ffff9ee4ffff02e6ffff18e8fffffee8ffffe2ecffff92edffff94edfffff2eeffffdef0ffff22f2ffffaaf6ffffacf6ffffb4f9ffff3afbffff0c730000967800002a7d0100
+      m_ExpandedIDs: 3afbfffffc46000046470000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -309,9 +309,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 19.985104, y: -2.804331, z: 7.8450484}
+    m_Target: {x: 808.2909, y: 641.1304, z: -642.7377}
     speed: 2
-    m_Value: {x: 19.985104, y: -2.804331, z: 7.8450484}
+    m_Value: {x: 808.2909, y: 641.1304, z: -642.7377}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -362,9 +362,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 18.681534
+    m_Target: 344.68375
     speed: 2
-    m_Value: 18.681534
+    m_Value: 344.68375
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -664,7 +664,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 380.80002
     y: 73.6
-    width: 1183.2
+    width: 1183.6001
     height: 585.4
   m_ViewDataDictionary: {fileID: 0}
   m_ViewTransforms:
@@ -679,6 +679,7 @@ MonoBehaviour:
     - {fileID: -3310352333676808443, guid: 9d340b1d23f9d1e439f856168c86da1e, type: 2}
     - {fileID: -2614744658670906998, guid: ecf1ccd37dd4b4344a5c05e7dfc02a6d, type: 2}
     - {fileID: 2274550921361354224, guid: 36c002fddd22b3740a6eb580ad8f6bcf, type: 2}
+    - {fileID: 7213009282098034298, guid: e908bf3a43176824a9fe5f1297ed99a4, type: 2}
     m_ValueSerializationHelper:
     - e00: 1
       e01: 0
@@ -840,10 +841,26 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 0.95780224
+      e01: 0
+      e02: 0
+      e03: -32.890106
+      e10: 0
+      e11: 0.95780224
+      e12: 0
+      e13: 201.84375
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: c0485a6704fa29d4e9adbc42b675209b, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: e908bf3a43176824a9fe5f1297ed99a4, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -2341728978976671798, guid: c0485a6704fa29d4e9adbc42b675209b, type: 2}
+  - m_Target: {fileID: 7213009282098034298, guid: e908bf3a43176824a9fe5f1297ed99a4, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -880,7 +897,7 @@ MonoBehaviour:
   m_MinSize: {x: 463, y: 271}
   m_MaxSize: {x: 20003, y: 10021}
   vertical: 0
-  controlID: 124906
+  controlID: 2750
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -948,22 +965,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/PreFabs
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/PreFabs
+  - Assets/Scripts
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\S\Desktop\gamerGit\FirstUnityGame\Squid0
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f4480000
-    m_LastClickedID: 18676
-    m_ExpandedIDs: 00000000e648000000ca9a3b
+    m_SelectedIDs: 2c4a0000
+    m_LastClickedID: 18988
+    m_ExpandedIDs: 00000000104a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -991,7 +1008,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e648000000ca9a3b
+    m_ExpandedIDs: 00000000104a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1016,10 +1033,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: befefdff
-    m_LastClickedInstanceID: -131394
+    m_SelectedInstanceIDs: 46470000
+    m_LastClickedInstanceID: 18246
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000000000003062010058650000
+    m_ExpandedInstanceIDs: c6230000306201005865000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1043,7 +1060,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 51.400024}
     m_GridSize: 96
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
@@ -1267,12 +1284,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 680
-    width: 1565
+    width: 1043.8
     height: 391.59998
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -130390
+  m_LastSelectedObjectID: 18110
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1337,22 +1354,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/PreFabs
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/PreFabs
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\S\Desktop\gamerGit\FirstUnityGame\Squid0
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f4480000
-    m_LastClickedID: 18676
-    m_ExpandedIDs: 00000000e648000000ca9a3b
+    m_SelectedIDs: 2c4a0000
+    m_LastClickedID: 18988
+    m_ExpandedIDs: 00000000104a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1380,7 +1397,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e648000000ca9a3b
+    m_ExpandedIDs: 00000000104a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1405,10 +1422,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: befefdff
-    m_LastClickedInstanceID: -131394
+    m_SelectedInstanceIDs: 46470000
+    m_LastClickedInstanceID: 18246
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: 
+    m_ExpandedInstanceIDs: 00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1432,7 +1449,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 55.400024}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 200
@@ -1455,8 +1472,8 @@ MonoBehaviour:
     y: 0
     width: 481.59998
     height: 1019
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -1493,7 +1510,7 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -131394
+  m_LastInspectedObjectInstanceID: 18246
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_LockTracker:
