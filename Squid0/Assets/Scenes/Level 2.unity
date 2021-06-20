@@ -134,6 +134,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2893201695935671494, guid: 0b212d5a05075bc4387bf32eadee4de7, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2893201695935671494, guid: 0b212d5a05075bc4387bf32eadee4de7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2893201695935671494, guid: 0b212d5a05075bc4387bf32eadee4de7, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2893201695935671494, guid: 0b212d5a05075bc4387bf32eadee4de7, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2893201695935671494, guid: 0b212d5a05075bc4387bf32eadee4de7, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2893201695935671494, guid: 0b212d5a05075bc4387bf32eadee4de7, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 2893201697332679448, guid: 0b212d5a05075bc4387bf32eadee4de7, type: 3}
       propertyPath: m_Name
       value: UI+Boarder Prefab
@@ -181,6 +205,10 @@ PrefabInstance:
     - target: {fileID: 2893201697332679451, guid: 0b212d5a05075bc4387bf32eadee4de7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9015766892874457031, guid: 0b212d5a05075bc4387bf32eadee4de7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b212d5a05075bc4387bf32eadee4de7, type: 3}
@@ -1048,6 +1076,7 @@ MonoBehaviour:
   _speed: 2
   _weedSlowFactor: 4
   _isLarge: 0
+  _sizeFactor: 1
   _insideBoss: 0
 --- !u!95 &2010742542
 Animator:

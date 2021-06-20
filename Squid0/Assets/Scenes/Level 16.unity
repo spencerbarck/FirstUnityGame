@@ -1649,6 +1649,7 @@ MonoBehaviour:
   _speed: 2
   _weedSlowFactor: 4
   _isLarge: 0
+  _sizeFactor: 1
   _insideBoss: 0
 --- !u!95 &512758319
 Animator:
@@ -2839,6 +2840,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2893201695921315221, guid: 0b212d5a05075bc4387bf32eadee4de7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2893201697332679448, guid: 0b212d5a05075bc4387bf32eadee4de7, type: 3}
       propertyPath: m_Name
       value: UI+Boarder Prefab
@@ -5604,6 +5609,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1443454748082160238, guid: bce5e65c0abe66040be1a74fcad10f42, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443454748082160238, guid: bce5e65c0abe66040be1a74fcad10f42, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 1759567484162947434, guid: bce5e65c0abe66040be1a74fcad10f42, type: 3}
       propertyPath: m_Name
       value: Lobster

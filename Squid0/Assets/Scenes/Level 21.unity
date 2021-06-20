@@ -1758,6 +1758,7 @@ MonoBehaviour:
   _speed: 2
   _weedSlowFactor: 4
   _isLarge: 0
+  _sizeFactor: 1
   _insideBoss: 0
 --- !u!95 &422465834
 Animator:
@@ -3115,7 +3116,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 2
-  m_Text: 'Reefweed Is Safe One Side
+  m_Text: 'Reefweed Is Safe On One Side
 
 '
 --- !u!222 &1419725385

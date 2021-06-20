@@ -139,15 +139,30 @@ public class SquidPlayer : MonoBehaviour
             Vector3 hit = collision.contacts[0].normal;
             float angle = Vector3.Angle(hit, Vector3.up);
 
-            if(Mathf.Approximately(angle, 90)){
-                Vector3 cross = Vector3.Cross(Vector3.forward, hit);
-                if (cross.y >= 0)
-                {
-                    SoundManagerScript.PlaySound("Death");
-                    Destroy(gameObject);
+            if(collision.collider.GetComponent<ReefWeed>()._weedLeft)
+            {
+                if(Mathf.Approximately(angle, 90)){
+                    Vector3 cross = Vector3.Cross(Vector3.forward, hit);
+                    if (cross.y >= 0)
+                    {
+                        SoundManagerScript.PlaySound("Death");
+                        Destroy(gameObject);
+                    }
                 }
+                _inTheWeeds=true;
             }
-            _inTheWeeds=true;
+            else
+            {
+                if(Mathf.Approximately(angle, 90)){
+                    Vector3 cross = Vector3.Cross(Vector3.forward, hit);
+                    if (cross.y < 0)
+                    {
+                        SoundManagerScript.PlaySound("Death");
+                        Destroy(gameObject);
+                    }
+                }
+                _inTheWeeds=true;
+            }
         }
         else if(collision.collider.GetComponent<PorcupinePufferEnemy>() != null)
         {
