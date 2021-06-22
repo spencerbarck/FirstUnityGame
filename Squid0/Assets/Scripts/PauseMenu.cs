@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool _isPaused = false;
     public GameObject _pauseMenuUI;
+
+    public Animator _animator;
 
     void Update()
     {
@@ -27,6 +30,14 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         _isPaused=false;
     }
+
+    public void Menu()
+    {
+        //_pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        //_isPaused=false;
+        StartCoroutine(LoadLevel(0));
+    }
     
     void Pause()
     {
@@ -38,5 +49,14 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Game Quit");
         Application.Quit();
+    }
+    
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        _animator.SetTrigger("LevelOver");
+        
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(levelIndex);
     }
 }

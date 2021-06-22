@@ -112,7 +112,7 @@ public class GiantSquidBoss : MonoBehaviour
                 {
                     if((transform.rotation.eulerAngles.z>315.0f)||(transform.rotation.eulerAngles.z<=45f))
                     {
-                        transform.Rotate(0,0,0.2f*-1,Space.Self); 
+                        transform.Rotate(0,0,0.15f*-1,Space.Self); 
                     }
                     else
                     {
@@ -124,7 +124,7 @@ public class GiantSquidBoss : MonoBehaviour
                 {
                     if((transform.rotation.eulerAngles.z>225.0f))
                     {
-                        transform.Rotate(0,0,0.2f*-1,Space.Self); 
+                        transform.Rotate(0,0,0.15f*-1,Space.Self); 
                     }
                     else
                     {
@@ -136,7 +136,7 @@ public class GiantSquidBoss : MonoBehaviour
                 {
                     if((transform.rotation.eulerAngles.z>135.0f))
                     {
-                        transform.Rotate(0,0,0.2f*-1,Space.Self); 
+                        transform.Rotate(0,0,0.15f*-1,Space.Self); 
                     }
                     else
                     {
@@ -148,7 +148,7 @@ public class GiantSquidBoss : MonoBehaviour
                 {
                     if((transform.rotation.eulerAngles.z>45.0f))
                     {
-                        transform.Rotate(0,0,0.2f*-1,Space.Self); 
+                        transform.Rotate(0,0,0.15f*-1,Space.Self); 
                     }
                     else
                     {
@@ -162,7 +162,7 @@ public class GiantSquidBoss : MonoBehaviour
                     {
                         if(transform.rotation.eulerAngles.z<=45f)
                         {
-                            transform.Rotate(0,0,0.2f*-1,Space.Self); 
+                            transform.Rotate(0,0,0.15f*-1,Space.Self); 
                         }
                         else _atStart=true;
                     }

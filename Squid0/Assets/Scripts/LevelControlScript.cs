@@ -132,6 +132,9 @@ public class LevelControlScript : MonoBehaviour
     }
     public void LoadNextLevel()
     {
+        if(SaveSystem.LoadPlayer().level<SceneManager.GetActiveScene().buildIndex+1)
+        SaveSystem.SavePlayer(SceneManager.GetActiveScene().buildIndex+1);
+
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
     public void LoadThisLevel()

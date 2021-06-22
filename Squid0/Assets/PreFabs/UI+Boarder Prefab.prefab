@@ -128,7 +128,7 @@ RectTransform:
   m_Children:
   - {fileID: 6824328533621101481}
   m_Father: {fileID: 2893201697332679451}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -209,6 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pauseMenuUI: {fileID: 3907285399108862115}
+  _animator: {fileID: 2893201695921315216}
 --- !u!1 &2893201695601042129
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,7 +551,7 @@ RectTransform:
   m_Children:
   - {fileID: 2893201695935671495}
   m_Father: {fileID: 2893201697332679451}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -576,7 +577,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 20
+  m_SortingOrder: 40
   m_TargetDisplay: 0
 --- !u!114 &2893201695921315223
 MonoBehaviour:
@@ -1745,8 +1746,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2893201695698453774}
-  - {fileID: 2893201695921315217}
   - {fileID: 5210980623273472736}
+  - {fileID: 2893201695921315217}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3099,7 +3100,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3598605767601582458}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: Resume
+        m_MethodName: Menu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
