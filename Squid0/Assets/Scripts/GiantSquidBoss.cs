@@ -12,6 +12,9 @@ public class GiantSquidBoss : MonoBehaviour
     float _waitAttackTime = 3f;
     float _rotateStopTimer = 0.25f;
     float _rotateStopTime = 0.25f;
+
+    float _tenticleSoundTimer;
+    float _tenticleSoundTime = 0.5f;
     //end timer variables
 
     //speed variables
@@ -35,7 +38,7 @@ public class GiantSquidBoss : MonoBehaviour
     int _randomAttack;
     bool _attackChosen = false;
     bool _firstAttackDone;//used to make sure the first attack is SmallTiltLeftAttack
-    bool _tenticlesExtended;
+    bool _tenticlesExtended = true;
     int _lastAttack;
     //end attack variables
     public Animator _squidAnimator;
@@ -65,6 +68,7 @@ public class GiantSquidBoss : MonoBehaviour
                 _randomAttack=1;
                 _firstAttackDone=true;
             }
+            else _randomAttack=3;
             _lastAttack = _randomAttack;
         }
         switch(_randomAttack){
@@ -84,12 +88,23 @@ public class GiantSquidBoss : MonoBehaviour
     {
         if(_waitAttackTimer<=0.01f)
         {
-            _tenticlesExtended = true;
             _squidAnimator.SetBool("TenticlesExtended",true);
             _squidColliderTenticlesDown.enabled=true;
             _squidColliderTenticlesUp.enabled=false;
             _atStart=false;
         }
+
+        if(_tenticleSoundTimer<_tenticleSoundTime)
+            {
+                _tenticleSoundTimer+=Time.deltaTime;
+            }
+            else if(_tenticlesExtended)
+            {
+                SoundManagerScript.PlaySound("Giant Squid Spin");
+                _tenticlesExtended = false;
+                _tenticleSoundTimer=0;
+            }
+
         _waitAttackTimer+=Time.deltaTime;
 
         if(_waitAttackTimer>_waitAttackTime)
@@ -102,7 +117,7 @@ public class GiantSquidBoss : MonoBehaviour
     {
         if(!_atStart)
         {
-            if(_rotateStopTimer<_rotateStopTime)
+            if(_rotateStopTimer<=_rotateStopTime)
             {
                 _rotateStopTimer+=Time.deltaTime;
             }
@@ -117,6 +132,7 @@ public class GiantSquidBoss : MonoBehaviour
                     else
                     {
                         _rotateQuarter++;
+                        SoundManagerScript.PlaySound("Giant Squid Spin Spin");
                         _rotateStopTimer = 0;
                     }
                 }
@@ -129,6 +145,7 @@ public class GiantSquidBoss : MonoBehaviour
                     else
                     {
                         _rotateQuarter++;
+                        SoundManagerScript.PlaySound("Giant Squid Spin Spin");
                         _rotateStopTimer = 0;
                     }
                 }
@@ -141,6 +158,7 @@ public class GiantSquidBoss : MonoBehaviour
                     else
                     {
                         _rotateQuarter++;
+                        SoundManagerScript.PlaySound("Giant Squid Spin Spin");
                         _rotateStopTimer = 0;
                     }
                 }
@@ -153,6 +171,7 @@ public class GiantSquidBoss : MonoBehaviour
                     else
                     {
                         _rotateQuarter++;
+                        SoundManagerScript.PlaySound("Giant Squid Spin Spin");
                         _rotateStopTimer = 0;
                     }
                 }
@@ -184,6 +203,7 @@ public class GiantSquidBoss : MonoBehaviour
             
             _attackCount=0;
             _waitAttackTimer=0.01f;
+            _tenticlesExtended = true;
             _attackChosen=false;
         }
     }
@@ -316,6 +336,7 @@ public class GiantSquidBoss : MonoBehaviour
     {
         if(!_atStart)
         {
+            if ((transform.position.x==0)&&(_attackCount==0)) SoundManagerScript.PlaySound("Giant Squid Side");
             //left of center
             if (transform.position.x<=0)
             {
@@ -333,6 +354,7 @@ public class GiantSquidBoss : MonoBehaviour
             if(transform.position.x<-30) 
             {
                 _attackCount++;
+                if(_attackCount!=_numberOfAttacks)SoundManagerScript.PlaySound("Giant Squid Side");
                 //random attacks in the three lanes
                 int randAttack = Random.Range(1, 4);
                 if(_attackCount==_numberOfAttacks) randAttack=2;
@@ -396,6 +418,7 @@ public class GiantSquidBoss : MonoBehaviour
                 else
                 _swayingLeft=true;
             }
+            if ((transform.position.y==0)&&(_attackCount==0)) SoundManagerScript.PlaySound("Giant Squid Side");
             //above center
             if (transform.position.y>=0)
             {
@@ -415,6 +438,7 @@ public class GiantSquidBoss : MonoBehaviour
             if(transform.position.y>30) 
             {
                 _attackCount++;
+                if(_attackCount!=_numberOfAttacks)SoundManagerScript.PlaySound("Giant Squid Side");
                 transform.position=new Vector3(transform.position.x,-30);
             }
             //attack done

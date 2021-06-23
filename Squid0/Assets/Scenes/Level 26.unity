@@ -2896,7 +2896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2893201695921315221, guid: 0b212d5a05075bc4387bf32eadee4de7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2893201696036809814, guid: 0b212d5a05075bc4387bf32eadee4de7, type: 3}
       propertyPath: m_SortingOrder
@@ -4767,7 +4767,7 @@ Transform:
   - {fileID: 1927125602}
   - {fileID: 557694580}
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1071183795
 PrefabInstance:

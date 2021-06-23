@@ -51,7 +51,15 @@ public class LevelControlScript : MonoBehaviour
         if(_musicPlaying==false)
         {
             _musicPlaying=true;
-            SoundManagerScript.PlaySound("Music Space");
+            if(SceneManager.GetActiveScene().buildIndex == 26)SoundManagerScript.PlaySound("Boss Music");
+            else
+            {
+                if(SceneManager.GetActiveScene().buildIndex%2 == 0){  
+                    SoundManagerScript.PlaySound("Music Space");
+                }else{
+                    SoundManagerScript.PlaySound("Music Space 2");
+                }
+            }
         }
 
         if(!_endState)

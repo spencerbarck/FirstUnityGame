@@ -187,6 +187,8 @@ public class SquidPlayer : MonoBehaviour
                 {
                     _insideBoss = true;
                     Shrink();
+                    SoundManagerScript.PlaySound("Giant Squid Hurt");
+
                 }
                 else
                 {
