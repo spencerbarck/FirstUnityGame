@@ -46,6 +46,7 @@ public class GiantSquidBoss : MonoBehaviour
     public PolygonCollider2D _squidColliderTenticlesDown;
 
     bool _atStart = true;
+    [SerializeField] public int _health = 5;
     void Start()
     {
         _initialPosition=transform.position;
@@ -68,7 +69,7 @@ public class GiantSquidBoss : MonoBehaviour
                 _randomAttack=1;
                 _firstAttackDone=true;
             }
-            else _randomAttack=3;
+            //else _randomAttack=3;
             _lastAttack = _randomAttack;
         }
         switch(_randomAttack){
@@ -466,9 +467,19 @@ public class GiantSquidBoss : MonoBehaviour
             }
         }
     }
+
+    private void DeathRattle()
+    {
+
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.collider.GetComponent<SquidPlayer>() == null)
-        Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
+        {
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
+            _health--;
+            Debug.Log("Health "+_health);
+        }
     }
 }

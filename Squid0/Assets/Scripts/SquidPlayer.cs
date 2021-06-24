@@ -188,6 +188,8 @@ public class SquidPlayer : MonoBehaviour
                     _insideBoss = true;
                     Shrink();
                     SoundManagerScript.PlaySound("Giant Squid Hurt");
+                    collision.collider.GetComponent<GiantSquidBoss>()._health--;
+                    Debug.Log("Health "+collision.collider.GetComponent<GiantSquidBoss>()._health);
 
                 }
                 else
