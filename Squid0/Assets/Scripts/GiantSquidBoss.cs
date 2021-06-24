@@ -468,7 +468,7 @@ public class GiantSquidBoss : MonoBehaviour
         }
     }
 
-    private void DeathRattle()
+    public void DeathRattle()
     {
 
     }
@@ -478,8 +478,6 @@ public class GiantSquidBoss : MonoBehaviour
         if(collision.collider.GetComponent<SquidPlayer>() == null)
         {
             Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
-            _health--;
-            Debug.Log("Health "+_health);
         }
     }
 }

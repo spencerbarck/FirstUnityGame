@@ -1290,6 +1290,7 @@ MonoBehaviour:
   _speed: 2
   _weedSlowFactor: 4
   _isLarge: 0
+  _sizeFactor: 1
   _insideBoss: 0
 --- !u!95 &246206189
 Animator:
@@ -6409,6 +6410,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2893201695921315221, guid: 0b212d5a05075bc4387bf32eadee4de7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2893201697332679448, guid: 0b212d5a05075bc4387bf32eadee4de7, type: 3}
       propertyPath: m_Name
       value: UI+Boarder Prefab
@@ -6642,7 +6647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.39215687, g: 0.43529412, b: 0.654902, a: 1}
+  m_Color: {r: 0.23529413, g: 0.56078434, b: 0.40784317, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

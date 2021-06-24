@@ -5,6 +5,16 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public Animator _animator;
+    private bool _musicPlaying = false;
+
+    void Update()
+    {
+        if(!_musicPlaying)
+        {
+            SoundManagerScript.PlaySound("Menu Music");
+            _musicPlaying=true;
+        }
+    }
     public void PlayGame()
     {
         LoadNextLevel();

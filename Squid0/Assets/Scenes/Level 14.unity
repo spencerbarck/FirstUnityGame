@@ -451,7 +451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.39215687, g: 0.43529412, b: 0.654902, a: 1}
+  m_Color: {r: 1, g: 0.5254902, b: 0.16078432, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2724,6 +2724,7 @@ MonoBehaviour:
   _speed: 2
   _weedSlowFactor: 4
   _isLarge: 0
+  _sizeFactor: 1
   _insideBoss: 0
 --- !u!95 &1982143366
 Animator:
