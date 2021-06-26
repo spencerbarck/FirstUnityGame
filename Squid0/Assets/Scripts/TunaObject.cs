@@ -22,8 +22,8 @@ public class TunaObject : MonoBehaviour
         _speed = _speed * -1;
 
         Vector2 characterScale = transform.localScale;
-        if(_upAndDown) characterScale.y = characterScale.y*-1;
-        else characterScale.x = characterScale.x*-1;
+        //if(_upAndDown) characterScale.y = characterScale.y*-1;
+         characterScale.x = characterScale.x*-1;
         transform.localScale = characterScale;
 
 
