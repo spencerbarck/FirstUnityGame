@@ -20,6 +20,7 @@ public class SoundManagerScript : MonoBehaviour
      public static AudioClip _giantSquidSpinAttackSound;
     public static AudioClip _giantSquidSpinAttackSpinSound;
     public static AudioClip _giantSquidHurtSound;
+    public static AudioClip _giantSquidEatSound;
     public static AudioSource _audioSource;
     
     // Start is called before the first frame update
@@ -42,6 +43,7 @@ public class SoundManagerScript : MonoBehaviour
         _giantSquidSpinAttackSound = Resources.Load<AudioClip> ("GiantSquidSpinAttack");
         _giantSquidSpinAttackSpinSound = Resources.Load<AudioClip> ("GiantSquidSpinAttackSpin");
         _giantSquidHurtSound = Resources.Load<AudioClip> ("GiantSquidHurt");
+        _giantSquidEatSound = Resources.Load<AudioClip> ("GiantSquidEat");
 
         _audioSource = GetComponent<AudioSource> ();
     }
@@ -72,6 +74,9 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "Giant Squid Hurt":
                 _audioSource.PlayOneShot(_giantSquidHurtSound);
+                break;
+            case "Giant Squid Eat":
+                _audioSource.PlayOneShot(_giantSquidEatSound);
                 break;
             case "Death":
                 _audioSource.PlayOneShot(_dieSounds);

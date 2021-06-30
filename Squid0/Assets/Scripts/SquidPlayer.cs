@@ -20,6 +20,8 @@ public class SquidPlayer : MonoBehaviour
     private float _shrinkDeathTimer;
     [SerializeField]
     private bool _insideBoss;
+
+    private LevelControlScript _levelControl;
     public float getSpeed()
     {
         return _speed;
@@ -28,6 +30,8 @@ public class SquidPlayer : MonoBehaviour
     {
         _input = new Playerinput();
         _input.Squid.Movement.performed += ctx => Move(ctx.ReadValue<Vector2>());
+
+        _levelControl=FindObjectOfType<LevelControlScript>();
     }
 
     void Start()
@@ -132,6 +136,7 @@ public class SquidPlayer : MonoBehaviour
         }
         else if(collision.collider.GetComponent<PearlPickup>() != null)
         {
+            _levelControl.SpawnShrimp();
             SoundManagerScript.PlaySound("PearlPickup");
         }
         else if(collision.collider.GetComponent<ReefWeed>() != null)
@@ -181,24 +186,32 @@ public class SquidPlayer : MonoBehaviour
         }
         else if(collision.collider.GetComponent<GiantSquidBoss>() != null)
         {
-            if(!_insideBoss)
+            if(collision.collider.GetComponent<GiantSquidBoss>()._isDead)
             {
-                if(_isLarge)
+                SoundManagerScript.PlaySound("Giant Squid Eat");
+                Destroy(collision.collider.GetComponent<GiantSquidBoss>().gameObject);
+            }
+            else
+            {
+                if(!_insideBoss)
                 {
-                    _insideBoss = true;
-                    Shrink();
-                    SoundManagerScript.PlaySound("Giant Squid Hurt");
-                    collision.collider.GetComponent<GiantSquidBoss>()._health--;
-                    Debug.Log("Health "+collision.collider.GetComponent<GiantSquidBoss>()._health);
+                    if(_isLarge)
+                    {
+                        _insideBoss = true;
+                        Shrink();
+                        SoundManagerScript.PlaySound("Giant Squid Hurt");
+                        collision.collider.GetComponent<GiantSquidBoss>().ReduceHealth();
 
-                }
-                else
-                {
-                    Debug.Log("Before Hit:"+_sizeFactor);
-                    SoundManagerScript.PlaySound("Death");
-                    Destroy(gameObject);
+                    }
+                    else
+                    {
+                        Debug.Log("Before Hit:"+_sizeFactor);
+                        SoundManagerScript.PlaySound("Death");
+                        Destroy(gameObject);
+                    }
                 }
             }
+            
         }
         else if(((collision.collider.GetComponent<LobsterEnemy>() != null)||
             (collision.collider.GetComponent<CrabEnemy>() != null))&&_isLarge)
@@ -227,6 +240,7 @@ public class SquidPlayer : MonoBehaviour
 
     private void Shrink()
     {
+        _levelControl.SpawnShrimp();
         Vector2 characterScale = transform.localScale / 2;
         transform.localScale = characterScale;
         _sizeFactor--;

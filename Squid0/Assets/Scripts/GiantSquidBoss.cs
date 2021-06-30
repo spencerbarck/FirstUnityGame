@@ -45,8 +45,22 @@ public class GiantSquidBoss : MonoBehaviour
     public PolygonCollider2D _squidColliderTenticlesUp;
     public PolygonCollider2D _squidColliderTenticlesDown;
 
-    bool _atStart = true;
+    //health variables
     [SerializeField] public int _health = 5;
+    private BossHeart[] _hearts;
+    float _damageTimer;
+    float _damageTime = 0.5f;
+    bool _takingDamage;
+
+    bool _isDying;
+    public bool _isDead;
+    //end health variables
+    bool _atStart = true;
+
+    void OnEnable()
+    {
+        _hearts = FindObjectsOfType<BossHeart>();
+    }
     void Start()
     {
         _initialPosition=transform.position;
@@ -54,25 +68,27 @@ public class GiantSquidBoss : MonoBehaviour
     }
     void Update()
     {
-        //tilt timer count up and stop
-        _tiltTimer+=Time.deltaTime;
-        if(!_attackChosen)
-        {
-            _randomAttack=_lastAttack;
-            while(_randomAttack==_lastAttack)
+        
+        if(!_isDying){
+            //tilt timer count up and stop
+            _tiltTimer+=Time.deltaTime;
+            if(!_attackChosen)
             {
-                _randomAttack = Random.Range(1, 4);
+                _randomAttack=_lastAttack;
+                while(_randomAttack==_lastAttack)
+                {
+                    _randomAttack = Random.Range(1, 4);
+                }
+                _attackChosen=true;
+                if(!_firstAttackDone)
+                {
+                    _randomAttack=1;
+                    _firstAttackDone=true;
+                }
+                //else _randomAttack=3;
+                _lastAttack = _randomAttack;
             }
-            _attackChosen=true;
-            if(!_firstAttackDone)
-            {
-                _randomAttack=1;
-                _firstAttackDone=true;
-            }
-            //else _randomAttack=3;
-            _lastAttack = _randomAttack;
-        }
-        switch(_randomAttack){
+            switch(_randomAttack){
             case 1:
                 SmallTiltLeftAttack();
                 break;
@@ -82,7 +98,51 @@ public class GiantSquidBoss : MonoBehaviour
             case 3:
                 SpinTenticleAttack();
                 break;
+            }
+
+            if(_takingDamage)
+            {
+                _damageTimer+=Time.deltaTime;
+                
+                if(_damageTimer<_damageTime)
+                {
+                    if((_damageTimer<_damageTime/4)||(_damageTimer>(_damageTime/4)*3))
+                    {
+                        transform.position += new Vector3(0,Time.deltaTime*10);
+                        transform.position += new Vector3(Time.deltaTime*10,0);
+
+                        foreach(BossHeart heart in _hearts)
+                        {
+                            if(heart!= null)
+                            {
+                                heart.transform.position+= new Vector3(0,Time.deltaTime*1);
+                            }
+                        }
+                    }
+                    else 
+                    {
+                        transform.position += new Vector3(0,Time.deltaTime*-10);
+                        transform.position += new Vector3(Time.deltaTime*-10,0);
+
+                        foreach(BossHeart heart in _hearts)
+                        {
+                            if(heart!= null)
+                            {
+                                heart.transform.position+= new Vector3(0,Time.deltaTime*-1);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    _damageTimer=0;
+                    _takingDamage=false;
+                    _squidAnimator.SetBool("TakingDamage",false);
+                }
+            }
         }
+
+        if(_isDying)DeathRattle();
     }
 
     private void SpinTenticleAttack()
@@ -467,9 +527,54 @@ public class GiantSquidBoss : MonoBehaviour
             }
         }
     }
+    public void ReduceHealth()
+    {
+        _takingDamage=true;
+        _tenticlesExtended=false;
+        _squidAnimator.SetBool("TakingDamage",true);
+        _health--;
+        int highestHeart = -1;
+        foreach(BossHeart heart in _hearts)
+        {
+            if((heart._heartPosition>highestHeart)&&(heart!= null))
+            {
+                highestHeart=heart._heartPosition;
+            }
+        }
+
+        foreach(BossHeart heart in _hearts)
+        {
+            if(heart._heartPosition==highestHeart)
+            {
+                Destroy(heart.gameObject);
+            }
+        }
+
+        if(_health<1)_isDying=true;
+    }
 
     public void DeathRattle()
     {
+        if(!_isDead)
+        {  
+            _squidColliderTenticlesUp.enabled=false;
+            _squidColliderTenticlesDown.enabled=false;
+            transform.Rotate(0,0,0.525f*-1,Space.Self);
+            Vector3 currentScale = transform.localScale;
+            Debug.Log(transform.localScale.y);
+
+            if(transform.position.y>0)transform.position += new Vector3(0,Time.deltaTime*-5f);
+            if(transform.position.y<0)transform.position += new Vector3(0,Time.deltaTime*5f);
+            if(transform.position.x>10)transform.position += new Vector3(Time.deltaTime*-5f,0);
+            if(transform.position.x<10)transform.position += new Vector3(Time.deltaTime*5f,0);
+
+            if(transform.localScale.y>1f)transform.localScale = new Vector3(currentScale.x*0.9995f,currentScale.y*0.9995f);
+            else _isDead=true;
+        }
+        else
+        {
+            _squidColliderTenticlesUp.enabled=true;
+        }
 
     }
 

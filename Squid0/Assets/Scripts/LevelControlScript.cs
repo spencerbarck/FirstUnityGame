@@ -10,6 +10,7 @@ public class LevelControlScript : MonoBehaviour
     private StarfishEnemy[] _enemies;
     private PufferFishEnemy[] _pickups;
     private PorcupinePufferEnemy[] _pickups2;
+    private JumboShrimpEnemy[] _shrimp;
     private SquidPlayer _player;
     public Animator _animator;
     public Text _speedText;
@@ -26,6 +27,7 @@ public class LevelControlScript : MonoBehaviour
     private bool _musicPlaying;
     private int _starFishCount;
     private int _pufferFishCount;
+    private int _shrimpCount;
     void OnEnable()
     {
         _enemies = FindObjectsOfType<StarfishEnemy>();
@@ -34,6 +36,14 @@ public class LevelControlScript : MonoBehaviour
         _pufferFishCount = _pickups.Length;
         _pickups2 = FindObjectsOfType<PorcupinePufferEnemy>();
         _pufferFishCount += _pickups2.Length;
+
+        _shrimp = FindObjectsOfType<JumboShrimpEnemy>();
+        foreach(JumboShrimpEnemy js in _shrimp)
+        {
+            js.GetComponent<BoxCollider2D>().enabled=false;
+            js.GetComponent<SpriteRenderer>().enabled=false;
+        }
+        _shrimpCount = _shrimp.Length;
 
         _player = FindObjectOfType<SquidPlayer>();
         _winLoseText.text = "";
@@ -156,5 +166,44 @@ public class LevelControlScript : MonoBehaviour
         
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(levelIndex);
+    }
+
+    public void SpawnShrimp()
+    {
+        foreach(JumboShrimpEnemy js in _shrimp)
+        {
+            if(js == null)
+            {
+                _shrimpCount--;
+            }
+        }
+        JumboShrimpEnemy[] newShrimpArray = new JumboShrimpEnemy[_shrimpCount];
+
+        int shrimpAdd = 0;
+
+        foreach(JumboShrimpEnemy js in _shrimp)
+        {
+            if(js != null)
+            {
+                Debug.Log(js.transform.position.x);
+                newShrimpArray[shrimpAdd] = js;
+                shrimpAdd++;
+            }
+        }
+
+        _shrimp = newShrimpArray;
+
+        _shrimpCount = _shrimp.Length;
+        Debug.Log(_shrimpCount);
+        int randomShrimp = Random.Range(0, _shrimpCount);
+
+        for(int i=0; i<_shrimp.Length;i++)
+        {
+            if(i==randomShrimp)
+            {
+                _shrimp[i].GetComponent<BoxCollider2D>().enabled=true;
+                _shrimp[i].GetComponent<SpriteRenderer>().enabled=true;
+            }
+        }
     }
 }
