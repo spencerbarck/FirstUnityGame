@@ -15,7 +15,7 @@ public class PearlPickup : MonoBehaviour
             {
                 b.DestroyBoarder();
             }
-            _helpText.text = "";
+            _helpText.text = "You Need Shrimp";
                 
             Destroy(gameObject);
         }
