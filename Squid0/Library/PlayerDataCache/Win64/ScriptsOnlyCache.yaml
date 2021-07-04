@@ -201,7 +201,15 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -232,6 +240,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5286}
     - Class: 114
+      Script: {instanceID: 6210}
+    - Class: 114
       Script: {instanceID: 6240}
     - Class: 115
       Script: {instanceID: 0}
@@ -250,6 +260,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 225
       Script: {instanceID: 0}
     - Class: 241
       Script: {instanceID: 0}
@@ -3133,6 +3145,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 225
       Script: {instanceID: 0}
+    - Class: 251
+      Script: {instanceID: 0}
     Assets/Scenes/Level 8.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -4323,7 +4337,7 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
-      Hash: e9e1cbfef8e2fb4ceab2ebb5e80f9551
+      Hash: f2f94121c5165fa6641f047b24a2c53b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SquidPlayer
@@ -4677,7 +4691,7 @@ ScriptsOnlyBuild:
     className: RemoteInputPlayerConnection
   - hash:
       serializedVersion: 2
-      Hash: bde738dc5f9488d963d3c4e4ce6b06e8
+      Hash: 54566ef0d5767e44f431610ada0a28bc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GiantSquidBoss

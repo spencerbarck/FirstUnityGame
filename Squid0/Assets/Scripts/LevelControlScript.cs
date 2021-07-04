@@ -153,6 +153,11 @@ public class LevelControlScript : MonoBehaviour
     }
     public void LoadNextLevel()
     {
+        if(SceneManager.GetActiveScene().buildIndex == 35)
+        {
+            SoundManagerScript.PlaySound("Next Level Last");
+        }
+        else SoundManagerScript.PlaySound("Next Level");
         if(SaveSystem.LoadPlayer().level<SceneManager.GetActiveScene().buildIndex+1)
         SaveSystem.SavePlayer(SceneManager.GetActiveScene().buildIndex+1);
 
@@ -167,7 +172,8 @@ public class LevelControlScript : MonoBehaviour
     {
         _animator.SetTrigger("LevelOver");
         
-        yield return new WaitForSeconds(1f);
+        if(SceneManager.GetActiveScene().buildIndex == 35)yield return new WaitForSeconds(2f);
+        else yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(levelIndex);
     }
 

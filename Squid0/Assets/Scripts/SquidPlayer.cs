@@ -22,8 +22,8 @@ public class SquidPlayer : MonoBehaviour
     private bool _insideBoss;
     private LevelControlScript _levelControl;
     public Animator _squidAnimator;
-    public PolygonCollider2D _squidCollider;
-    public PolygonCollider2D _squidColliderLarge;
+    public BoxCollider2D _squidCollider;
+    public BoxCollider2D _squidColliderLarge;
     public float getSpeed()
     {
         return _speed;
@@ -140,6 +140,7 @@ public class SquidPlayer : MonoBehaviour
         else if(collision.collider.GetComponent<PearlPickup>() != null)
         {
             _levelControl.SpawnShrimp();
+            SoundManagerScript.PlaySound("StopStart");
             SoundManagerScript.PlaySound("PearlPickup");
         }
         else if(collision.collider.GetComponent<ReefWeed>() != null)

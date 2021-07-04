@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 99259414}
   - component: {fileID: 99259413}
   - component: {fileID: 99259412}
+  - component: {fileID: 99259416}
   m_Layer: 0
   m_Name: EnemyStarfish
   m_TagString: Untagged
@@ -168,7 +169,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -265,6 +266,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &99259416
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99259410}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &119081419
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,6 +298,7 @@ GameObject:
   - component: {fileID: 119081423}
   - component: {fileID: 119081422}
   - component: {fileID: 119081421}
+  - component: {fileID: 119081425}
   m_Layer: 0
   m_Name: EnemyStarfish (6)
   m_TagString: Untagged
@@ -310,7 +331,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -407,6 +428,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &119081425
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119081419}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &120211626
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,6 +460,7 @@ GameObject:
   - component: {fileID: 120211630}
   - component: {fileID: 120211629}
   - component: {fileID: 120211628}
+  - component: {fileID: 120211632}
   m_Layer: 0
   m_Name: EnemyStarfish (4)
   m_TagString: Untagged
@@ -435,11 +476,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 120211626}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.426111, y: 5.495791, z: 6.7632203}
+  m_LocalPosition: {x: 14.426111, y: 6, z: 6.7632203}
   m_LocalScale: {x: 6.1155305, y: 6.1155305, z: 6.1155305}
   m_Children: []
   m_Father: {fileID: 717526599}
-  m_RootOrder: 22
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &120211628
 BoxCollider2D:
@@ -452,7 +493,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -549,6 +590,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &120211632
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120211626}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &122488672
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,11 +636,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122488672}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.2783315, y: 4.495791, z: 6.7632203}
+  m_LocalPosition: {x: 2.8522215, y: 5.495791, z: 0}
   m_LocalScale: {x: -7, y: 7, z: 7}
   m_Children: []
-  m_Father: {fileID: 717526599}
-  m_RootOrder: 27
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &122488674
 PolygonCollider2D:
@@ -695,6 +755,7 @@ GameObject:
   - component: {fileID: 133826584}
   - component: {fileID: 133826583}
   - component: {fileID: 133826582}
+  - component: {fileID: 133826586}
   m_Layer: 0
   m_Name: EnemyStarfish (1)
   m_TagString: Untagged
@@ -727,7 +788,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -824,6 +885,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &133826586
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133826580}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &141378583
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,6 +917,7 @@ GameObject:
   - component: {fileID: 141378587}
   - component: {fileID: 141378586}
   - component: {fileID: 141378585}
+  - component: {fileID: 141378589}
   m_Layer: 0
   m_Name: EnemyStarfish (2)
   m_TagString: Untagged
@@ -869,7 +950,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -966,6 +1047,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &141378589
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141378583}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &181068726
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,6 +1079,7 @@ GameObject:
   - component: {fileID: 181068730}
   - component: {fileID: 181068729}
   - component: {fileID: 181068728}
+  - component: {fileID: 181068732}
   m_Layer: 0
   m_Name: EnemyStarfish (8)
   m_TagString: Untagged
@@ -1011,7 +1112,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -1108,6 +1209,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &181068732
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181068726}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &185479458
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,11 +1255,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 185479458}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.2783318, y: 4.495791, z: 6.7632203}
+  m_LocalPosition: {x: 4.8522215, y: 5.495791, z: 0}
   m_LocalScale: {x: -7, y: 7, z: 7}
   m_Children: []
-  m_Father: {fileID: 717526599}
-  m_RootOrder: 29
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &185479460
 PolygonCollider2D:
@@ -1268,10 +1388,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197219632}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.721669, y: 4.495791, z: 6.7632203}
+  m_LocalPosition: {x: -15.147779, y: 5.495791, z: 0}
   m_LocalScale: {x: -7, y: 7, z: 7}
   m_Children: []
-  m_Father: {fileID: 717526599}
+  m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &197219634
@@ -1387,6 +1507,7 @@ GameObject:
   - component: {fileID: 289943946}
   - component: {fileID: 289943945}
   - component: {fileID: 289943944}
+  - component: {fileID: 289943948}
   m_Layer: 0
   m_Name: EnemyStarfish (4)
   m_TagString: Untagged
@@ -1402,11 +1523,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289943942}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.426111, y: 5.495791, z: 6.7632203}
+  m_LocalPosition: {x: 8.426111, y: 6, z: 6.7632203}
   m_LocalScale: {x: 6.1155305, y: 6.1155305, z: 6.1155305}
   m_Children: []
   m_Father: {fileID: 717526599}
-  m_RootOrder: 16
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &289943944
 BoxCollider2D:
@@ -1419,7 +1540,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -1516,6 +1637,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &289943948
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289943942}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &419288868
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,11 +1683,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419288868}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.426111, y: 4.495791, z: 6.7632203}
+  m_LocalPosition: {x: 13, y: 5.495791, z: 0}
   m_LocalScale: {x: -7, y: 7, z: 7}
   m_Children: []
-  m_Father: {fileID: 717526599}
-  m_RootOrder: 21
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &419288870
 PolygonCollider2D:
@@ -1704,6 +1844,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerSquidCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 6892911176012584627, guid: 775939b387b0b684e91ccf054fb8aa93, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 775939b387b0b684e91ccf054fb8aa93, type: 3}
 --- !u!1 &531974251
@@ -1833,11 +1977,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531974251}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.5738897, y: 4.495791, z: 6.7632203}
+  m_LocalPosition: {x: -7, y: 5.495791, z: 0}
   m_LocalScale: {x: -7, y: 7, z: 7}
   m_Children: []
-  m_Father: {fileID: 717526599}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &661752173
 GameObject:
@@ -1852,6 +1996,7 @@ GameObject:
   - component: {fileID: 661752177}
   - component: {fileID: 661752176}
   - component: {fileID: 661752175}
+  - component: {fileID: 661752179}
   m_Layer: 0
   m_Name: EnemyStarfish (4)
   m_TagString: Untagged
@@ -1867,11 +2012,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661752173}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5738897, y: 5.495791, z: 6.7632203}
+  m_LocalPosition: {x: -1.5738897, y: 6, z: 6.7632203}
   m_LocalScale: {x: 6.1155305, y: 6.1155305, z: 6.1155305}
   m_Children: []
   m_Father: {fileID: 717526599}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &661752175
 BoxCollider2D:
@@ -1884,7 +2029,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -1981,6 +2126,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &661752179
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661752173}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &675252013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1994,6 +2158,7 @@ GameObject:
   - component: {fileID: 675252017}
   - component: {fileID: 675252016}
   - component: {fileID: 675252015}
+  - component: {fileID: 675252019}
   m_Layer: 0
   m_Name: EnemyStarfish (4)
   m_TagString: Untagged
@@ -2009,11 +2174,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 675252013}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.426111, y: 5.495791, z: 6.7632203}
+  m_LocalPosition: {x: 12.426111, y: 6, z: 6.7632203}
   m_LocalScale: {x: 6.1155305, y: 6.1155305, z: 6.1155305}
   m_Children: []
   m_Father: {fileID: 717526599}
-  m_RootOrder: 20
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &675252015
 BoxCollider2D:
@@ -2026,7 +2191,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -2123,6 +2288,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &675252019
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675252013}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &717526598
 GameObject:
   m_ObjectHideFlags: 0
@@ -2151,39 +2335,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1666534838}
-  - {fileID: 531974255}
   - {fileID: 1999291539}
-  - {fileID: 1376550514}
   - {fileID: 1703117967}
-  - {fileID: 765297508}
   - {fileID: 661752174}
-  - {fileID: 1804604439}
   - {fileID: 1009975202}
-  - {fileID: 197219633}
   - {fileID: 1469556494}
-  - {fileID: 2026220814}
   - {fileID: 1178913221}
-  - {fileID: 1283685036}
   - {fileID: 1588040066}
-  - {fileID: 817587022}
   - {fileID: 289943943}
-  - {fileID: 1391630222}
   - {fileID: 830272408}
-  - {fileID: 922807225}
   - {fileID: 675252014}
-  - {fileID: 419288869}
   - {fileID: 120211627}
-  - {fileID: 1902520767}
   - {fileID: 1432017895}
-  - {fileID: 1697785194}
   - {fileID: 1922370379}
-  - {fileID: 122488673}
   - {fileID: 2066352194}
-  - {fileID: 185479459}
   - {fileID: 1540026159}
-  - {fileID: 1549283112}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &765297507
 GameObject:
@@ -2212,11 +2380,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765297507}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.5738897, y: 4.495791, z: 6.7632203}
+  m_LocalPosition: {x: -3, y: 5.495791, z: 0}
   m_LocalScale: {x: -7, y: 7, z: 7}
   m_Children: []
-  m_Father: {fileID: 717526599}
-  m_RootOrder: 5
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &765297509
 PolygonCollider2D:
@@ -2345,11 +2513,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817587021}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.721669, y: 4.495791, z: 6.7632203}
+  m_LocalPosition: {x: -9.147779, y: 5.495791, z: 0}
   m_LocalScale: {x: -7, y: 7, z: 7}
   m_Children: []
-  m_Father: {fileID: 717526599}
-  m_RootOrder: 15
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &817587023
 PolygonCollider2D:
@@ -2464,6 +2632,7 @@ GameObject:
   - component: {fileID: 830272411}
   - component: {fileID: 830272410}
   - component: {fileID: 830272409}
+  - component: {fileID: 830272413}
   m_Layer: 0
   m_Name: EnemyStarfish (4)
   m_TagString: Untagged
@@ -2479,11 +2648,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830272407}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.426111, y: 5.495791, z: 6.7632203}
+  m_LocalPosition: {x: 10.426111, y: 6, z: 6.7632203}
   m_LocalScale: {x: 6.1155305, y: 6.1155305, z: 6.1155305}
   m_Children: []
   m_Father: {fileID: 717526599}
-  m_RootOrder: 18
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &830272409
 BoxCollider2D:
@@ -2496,7 +2665,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -2593,6 +2762,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &830272413
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830272407}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &922807224
 GameObject:
   m_ObjectHideFlags: 0
@@ -2620,11 +2808,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 922807224}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.426111, y: 4.495791, z: 6.7632203}
+  m_LocalPosition: {x: 11, y: 5.495791, z: 0}
   m_LocalScale: {x: -7, y: 7, z: 7}
   m_Children: []
-  m_Father: {fileID: 717526599}
-  m_RootOrder: 19
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &922807226
 PolygonCollider2D:
@@ -2739,6 +2927,7 @@ GameObject:
   - component: {fileID: 1009975205}
   - component: {fileID: 1009975204}
   - component: {fileID: 1009975203}
+  - component: {fileID: 1009975207}
   m_Layer: 0
   m_Name: EnemyStarfish (4)
   m_TagString: Untagged
@@ -2754,11 +2943,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009975201}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.721669, y: 5.495791, z: 6.7632203}
+  m_LocalPosition: {x: -15.721669, y: 6, z: 6.7632203}
   m_LocalScale: {x: 6.1155305, y: 6.1155305, z: 6.1155305}
   m_Children: []
   m_Father: {fileID: 717526599}
-  m_RootOrder: 8
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1009975203
 BoxCollider2D:
@@ -2771,7 +2960,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -2868,6 +3057,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &1009975207
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009975201}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1001 &1085797646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2875,6 +3083,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2893201695921315221, guid: 0b212d5a05075bc4387bf32eadee4de7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2893201697332679448, guid: 0b212d5a05075bc4387bf32eadee4de7, type: 3}
       propertyPath: m_Name
       value: UI+Boarder Prefab
@@ -2938,6 +3150,7 @@ GameObject:
   - component: {fileID: 1178913224}
   - component: {fileID: 1178913223}
   - component: {fileID: 1178913222}
+  - component: {fileID: 1178913226}
   m_Layer: 0
   m_Name: EnemyStarfish (4)
   m_TagString: Untagged
@@ -2953,11 +3166,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1178913220}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.721669, y: 5.495791, z: 6.7632203}
+  m_LocalPosition: {x: -11.721669, y: 6, z: 6.7632203}
   m_LocalScale: {x: 6.1155305, y: 6.1155305, z: 6.1155305}
   m_Children: []
   m_Father: {fileID: 717526599}
-  m_RootOrder: 12
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1178913222
 BoxCollider2D:
@@ -2970,7 +3183,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -3067,6 +3280,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &1178913226
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178913220}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1211367912
 GameObject:
   m_ObjectHideFlags: 0
@@ -3080,6 +3312,7 @@ GameObject:
   - component: {fileID: 1211367916}
   - component: {fileID: 1211367915}
   - component: {fileID: 1211367914}
+  - component: {fileID: 1211367918}
   m_Layer: 0
   m_Name: EnemyStarfish (7)
   m_TagString: Untagged
@@ -3112,7 +3345,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -3209,6 +3442,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &1211367918
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211367912}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1283685035
 GameObject:
   m_ObjectHideFlags: 0
@@ -3236,11 +3488,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283685035}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.721669, y: 4.495791, z: 6.7632203}
+  m_LocalPosition: {x: -11.147779, y: 5.495791, z: 0}
   m_LocalScale: {x: -7, y: 7, z: 7}
   m_Children: []
-  m_Father: {fileID: 717526599}
-  m_RootOrder: 13
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &1283685037
 PolygonCollider2D:
@@ -3451,11 +3703,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1376550513}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.5738897, y: 4.495791, z: 6.7632203}
+  m_LocalPosition: {x: -5, y: 5.495791, z: 0}
   m_LocalScale: {x: -7, y: 7, z: 7}
   m_Children: []
-  m_Father: {fileID: 717526599}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &1376550515
 PolygonCollider2D:
@@ -3584,11 +3836,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391630221}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.426111, y: 4.495791, z: 6.7632203}
+  m_LocalPosition: {x: 9, y: 5.495791, z: 0}
   m_LocalScale: {x: -7, y: 7, z: 7}
   m_Children: []
-  m_Father: {fileID: 717526599}
-  m_RootOrder: 17
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &1391630223
 PolygonCollider2D:
@@ -3741,6 +3993,7 @@ GameObject:
   - component: {fileID: 1432017898}
   - component: {fileID: 1432017897}
   - component: {fileID: 1432017896}
+  - component: {fileID: 1432017900}
   m_Layer: 0
   m_Name: EnemyStarfish (4)
   m_TagString: Untagged
@@ -3756,11 +4009,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432017894}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.27833152, y: 5.495791, z: 6.7632203}
+  m_LocalPosition: {x: 0.27833152, y: 6, z: 6.7632203}
   m_LocalScale: {x: 6.1155305, y: 6.1155305, z: 6.1155305}
   m_Children: []
   m_Father: {fileID: 717526599}
-  m_RootOrder: 24
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1432017896
 BoxCollider2D:
@@ -3773,7 +4026,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -3870,6 +4123,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &1432017900
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432017894}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1469556493
 GameObject:
   m_ObjectHideFlags: 0
@@ -3883,6 +4155,7 @@ GameObject:
   - component: {fileID: 1469556497}
   - component: {fileID: 1469556496}
   - component: {fileID: 1469556495}
+  - component: {fileID: 1469556499}
   m_Layer: 0
   m_Name: EnemyStarfish (4)
   m_TagString: Untagged
@@ -3898,11 +4171,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1469556493}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.721669, y: 5.495791, z: 6.7632203}
+  m_LocalPosition: {x: -13.721669, y: 6, z: 6.7632203}
   m_LocalScale: {x: 6.1155305, y: 6.1155305, z: 6.1155305}
   m_Children: []
   m_Father: {fileID: 717526599}
-  m_RootOrder: 10
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1469556495
 BoxCollider2D:
@@ -3915,7 +4188,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -4012,6 +4285,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &1469556499
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469556493}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1540026158
 GameObject:
   m_ObjectHideFlags: 0
@@ -4025,6 +4317,7 @@ GameObject:
   - component: {fileID: 1540026162}
   - component: {fileID: 1540026161}
   - component: {fileID: 1540026160}
+  - component: {fileID: 1540026164}
   m_Layer: 0
   m_Name: EnemyStarfish (4)
   m_TagString: Untagged
@@ -4040,11 +4333,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1540026158}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.2783318, y: 5.495791, z: 6.7632203}
+  m_LocalPosition: {x: 6.2783318, y: 6, z: 6.7632203}
   m_LocalScale: {x: 6.1155305, y: 6.1155305, z: 6.1155305}
   m_Children: []
   m_Father: {fileID: 717526599}
-  m_RootOrder: 30
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1540026160
 BoxCollider2D:
@@ -4057,7 +4350,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -4154,6 +4447,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &1540026164
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540026158}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1549283111
 GameObject:
   m_ObjectHideFlags: 0
@@ -4181,11 +4493,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549283111}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.2783318, y: 4.495791, z: 6.7632203}
+  m_LocalPosition: {x: 6.8522215, y: 5.495791, z: 0}
   m_LocalScale: {x: -7, y: 7, z: 7}
   m_Children: []
-  m_Father: {fileID: 717526599}
-  m_RootOrder: 31
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &1549283113
 PolygonCollider2D:
@@ -4300,6 +4612,7 @@ GameObject:
   - component: {fileID: 1588040069}
   - component: {fileID: 1588040068}
   - component: {fileID: 1588040067}
+  - component: {fileID: 1588040071}
   m_Layer: 0
   m_Name: EnemyStarfish (4)
   m_TagString: Untagged
@@ -4315,11 +4628,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1588040065}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.721669, y: 5.495791, z: 6.7632203}
+  m_LocalPosition: {x: -9.721669, y: 6, z: 6.7632203}
   m_LocalScale: {x: 6.1155305, y: 6.1155305, z: 6.1155305}
   m_Children: []
   m_Father: {fileID: 717526599}
-  m_RootOrder: 14
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1588040067
 BoxCollider2D:
@@ -4332,7 +4645,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -4429,6 +4742,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &1588040071
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588040065}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1666534833
 GameObject:
   m_ObjectHideFlags: 0
@@ -4442,6 +4774,7 @@ GameObject:
   - component: {fileID: 1666534836}
   - component: {fileID: 1666534835}
   - component: {fileID: 1666534834}
+  - component: {fileID: 1666534839}
   m_Layer: 0
   m_Name: EnemyStarfish (4)
   m_TagString: Untagged
@@ -4460,7 +4793,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -4565,12 +4898,31 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666534833}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.5738897, y: 5.495791, z: 6.7632203}
+  m_LocalPosition: {x: -7.5738897, y: 6, z: 6.7632203}
   m_LocalScale: {x: 6.1155305, y: 6.1155305, z: 6.1155305}
   m_Children: []
   m_Father: {fileID: 717526599}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!251 &1666534839
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666534833}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1697785193
 GameObject:
   m_ObjectHideFlags: 0
@@ -4598,11 +4950,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697785193}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.27833152, y: 4.495791, z: 6.7632203}
+  m_LocalPosition: {x: 0.8522215, y: 5.495791, z: 0}
   m_LocalScale: {x: -7, y: 7, z: 7}
   m_Children: []
-  m_Father: {fileID: 717526599}
-  m_RootOrder: 25
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &1697785195
 PolygonCollider2D:
@@ -4717,6 +5069,7 @@ GameObject:
   - component: {fileID: 1703117970}
   - component: {fileID: 1703117969}
   - component: {fileID: 1703117968}
+  - component: {fileID: 1703117972}
   m_Layer: 0
   m_Name: EnemyStarfish (4)
   m_TagString: Untagged
@@ -4732,11 +5085,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703117966}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.5738897, y: 5.495791, z: 6.7632203}
+  m_LocalPosition: {x: -3.5738897, y: 6, z: 6.7632203}
   m_LocalScale: {x: 6.1155305, y: 6.1155305, z: 6.1155305}
   m_Children: []
   m_Father: {fileID: 717526599}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1703117968
 BoxCollider2D:
@@ -4749,7 +5102,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -4846,6 +5199,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &1703117972
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703117966}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1784461830
 GameObject:
   m_ObjectHideFlags: 0
@@ -5013,11 +5385,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1804604438}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5738897, y: 4.495791, z: 6.7632203}
+  m_LocalPosition: {x: -1, y: 5.495791, z: 0}
   m_LocalScale: {x: -7, y: 7, z: 7}
   m_Children: []
-  m_Father: {fileID: 717526599}
-  m_RootOrder: 7
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &1804604440
 PolygonCollider2D:
@@ -5146,11 +5518,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902520766}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.426111, y: 4.495791, z: 6.7632203}
+  m_LocalPosition: {x: 15, y: 5.495791, z: 0}
   m_LocalScale: {x: -7, y: 7, z: 7}
   m_Children: []
-  m_Father: {fileID: 717526599}
-  m_RootOrder: 23
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &1902520768
 PolygonCollider2D:
@@ -5265,6 +5637,7 @@ GameObject:
   - component: {fileID: 1922370382}
   - component: {fileID: 1922370381}
   - component: {fileID: 1922370380}
+  - component: {fileID: 1922370384}
   m_Layer: 0
   m_Name: EnemyStarfish (4)
   m_TagString: Untagged
@@ -5280,11 +5653,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1922370378}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.2783315, y: 5.495791, z: 6.7632203}
+  m_LocalPosition: {x: 2.2783315, y: 6, z: 6.7632203}
   m_LocalScale: {x: 6.1155305, y: 6.1155305, z: 6.1155305}
   m_Children: []
   m_Father: {fileID: 717526599}
-  m_RootOrder: 26
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1922370380
 BoxCollider2D:
@@ -5297,7 +5670,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -5394,6 +5767,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &1922370384
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922370378}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1929155851
 GameObject:
   m_ObjectHideFlags: 0
@@ -5407,6 +5799,7 @@ GameObject:
   - component: {fileID: 1929155855}
   - component: {fileID: 1929155854}
   - component: {fileID: 1929155853}
+  - component: {fileID: 1929155857}
   m_Layer: 0
   m_Name: EnemyStarfish (5)
   m_TagString: Untagged
@@ -5439,7 +5832,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -5536,6 +5929,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &1929155857
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929155851}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1999291538
 GameObject:
   m_ObjectHideFlags: 0
@@ -5549,6 +5961,7 @@ GameObject:
   - component: {fileID: 1999291542}
   - component: {fileID: 1999291541}
   - component: {fileID: 1999291540}
+  - component: {fileID: 1999291544}
   m_Layer: 0
   m_Name: EnemyStarfish (4)
   m_TagString: Untagged
@@ -5564,11 +5977,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999291538}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.5738897, y: 5.495791, z: 6.7632203}
+  m_LocalPosition: {x: -5.5738897, y: 6, z: 6.7632203}
   m_LocalScale: {x: 6.1155305, y: 6.1155305, z: 6.1155305}
   m_Children: []
   m_Father: {fileID: 717526599}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1999291540
 BoxCollider2D:
@@ -5581,7 +5994,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -5678,6 +6091,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &1999291544
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999291538}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &2026220813
 GameObject:
   m_ObjectHideFlags: 0
@@ -5705,11 +6137,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026220813}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.721669, y: 4.495791, z: 6.7632203}
+  m_LocalPosition: {x: -13.147779, y: 5.495791, z: 0}
   m_LocalScale: {x: -7, y: 7, z: 7}
   m_Children: []
-  m_Father: {fileID: 717526599}
-  m_RootOrder: 11
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &2026220815
 PolygonCollider2D:
@@ -5824,6 +6256,7 @@ GameObject:
   - component: {fileID: 2066352197}
   - component: {fileID: 2066352196}
   - component: {fileID: 2066352195}
+  - component: {fileID: 2066352199}
   m_Layer: 0
   m_Name: EnemyStarfish (4)
   m_TagString: Untagged
@@ -5839,11 +6272,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2066352193}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.2783318, y: 5.495791, z: 6.7632203}
+  m_LocalPosition: {x: 4.2783318, y: 6, z: 6.7632203}
   m_LocalScale: {x: 6.1155305, y: 6.1155305, z: 6.1155305}
   m_Children: []
   m_Father: {fileID: 717526599}
-  m_RootOrder: 28
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2066352195
 BoxCollider2D:
@@ -5856,7 +6289,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -5953,6 +6386,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &2066352199
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066352193}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &2072169815
 GameObject:
   m_ObjectHideFlags: 0
@@ -5966,6 +6418,7 @@ GameObject:
   - component: {fileID: 2072169819}
   - component: {fileID: 2072169818}
   - component: {fileID: 2072169817}
+  - component: {fileID: 2072169821}
   m_Layer: 0
   m_Name: EnemyStarfish (3)
   m_TagString: Untagged
@@ -5998,7 +6451,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -6095,3 +6548,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &2072169821
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072169815}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1

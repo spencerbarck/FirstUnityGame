@@ -16,6 +16,12 @@ public class GiantSquidBoss : MonoBehaviour
 
     float _tenticleSoundTimer;
     float _tenticleSoundTime = 0.5f;
+    float _levelStartTimer;
+    float _levelStartTime = 4f;
+
+    float _startWinMusicTimer;
+    float _startWinMusicTime = 2.5f;
+    bool _winMusicPlaying;
     //end timer variables
 
     //speed variables
@@ -70,6 +76,8 @@ public class GiantSquidBoss : MonoBehaviour
     }
     void Update()
     {
+        _levelStartTimer+=Time.deltaTime;
+        if(_levelStartTimer<_levelStartTime) return;
         
         if(!_isDying){
             //tilt timer count up and stop
@@ -559,14 +567,22 @@ public class GiantSquidBoss : MonoBehaviour
         {
             _isDying=true;
             SoundManagerScript.PlaySound("StopStart");
-            SoundManagerScript.PlaySound("WinGame");
+            //SoundManagerScript.PlaySound("WinGame");
             SoundManagerScript.PlaySound("Giant Squid Dying");
         }
     }
 
     public void DeathRattle()
     {
-
+        _startWinMusicTimer+=Time.deltaTime;
+        if(_startWinMusicTimer>_startWinMusicTime)
+        {
+            if(!_winMusicPlaying)
+            {
+                SoundManagerScript.PlaySound("WinGame");
+                _winMusicPlaying=true;
+            }
+        }
         _helpText.text = "";
         if(!_isDead)
         {

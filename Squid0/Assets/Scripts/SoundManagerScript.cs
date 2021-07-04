@@ -16,8 +16,11 @@ public class SoundManagerScript : MonoBehaviour
     public static AudioClip _dieSounds;
     public static AudioClip _levelStartSound;
     public static AudioClip _pearlPickupSound;
+    public static AudioClip _pearlPickupMusic;
     public static AudioClip _shrimpPickupSound;
     public static AudioClip _shrinkSound;
+    public static AudioClip _nextLevelSound;
+    public static AudioClip _nextLevelLastSound;
     public static AudioClip _giantSquidSideAttackSound;
      public static AudioClip _giantSquidSpinAttackSound;
     public static AudioClip _giantSquidSpinAttackSpinSound;
@@ -41,8 +44,11 @@ public class SoundManagerScript : MonoBehaviour
         _pufferfishPickupSounds = Resources.Load<AudioClip> ("PufferfishPickup");
         _levelStartSound = Resources.Load<AudioClip> ("LevelStart");
         _pearlPickupSound = Resources.Load<AudioClip> ("PearlPickup");
+        _pearlPickupMusic = Resources.Load<AudioClip> ("PearlPickupMusic");
         _shrimpPickupSound = Resources.Load<AudioClip> ("ShrimpPickup");
         _shrinkSound = Resources.Load<AudioClip> ("Shrink");
+        _nextLevelSound = Resources.Load<AudioClip> ("NextLevel");
+        _nextLevelLastSound = Resources.Load<AudioClip> ("NextLevelLast");
 
         _giantSquidSideAttackSound = Resources.Load<AudioClip> ("GiantSquidSideAttack");
         _giantSquidSpinAttackSound = Resources.Load<AudioClip> ("GiantSquidSpinAttack");
@@ -105,6 +111,9 @@ public class SoundManagerScript : MonoBehaviour
             case "PearlPickup":
                 _audioSource.PlayOneShot(_pearlPickupSound);
                 break;
+            case "PearlPickupMusic":
+                _audioSource.PlayOneShot(_pearlPickupMusic,0.5f);
+                break;
             case "ShrimpPickup":
                 _audioSource.PlayOneShot(_shrimpPickupSound);
                 break;
@@ -119,6 +128,12 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "End Music":
                 _audioSource.PlayOneShot(_endMusic,0.4f);
+                break;
+            case "Next Level":
+                _audioSource.PlayOneShot(_nextLevelSound,0.4f);
+                break;
+            case "Next Level Last":
+                _audioSource.PlayOneShot(_nextLevelLastSound,0.6f);
                 break;
         }
     }
