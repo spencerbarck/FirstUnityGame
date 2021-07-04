@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3672395424779258605}
   - component: {fileID: 3672395424779258606}
   - component: {fileID: 3672395424779258607}
+  - component: {fileID: 3283104459729453087}
   m_Layer: 0
   m_Name: Reef6
   m_TagString: Untagged
@@ -102,3 +103,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!60 &3283104459729453087
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3672395424779258600}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.066617295, y: 0.06296744}
+      - {x: -0.054451168, y: -0.047151502}
+      - {x: -0.001364775, y: -0.06783391}
+      - {x: 0.06418406, y: -0.025400676}
+      - {x: 0.06296744, y: 0.06661726}

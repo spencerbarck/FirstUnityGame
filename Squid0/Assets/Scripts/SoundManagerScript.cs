@@ -8,6 +8,8 @@ public class SoundManagerScript : MonoBehaviour
     public static AudioClip _background2Music;
     public static AudioClip _bossMusic;
     public static AudioClip _menuMusic;
+    public static AudioClip _winGameMusic;
+    public static AudioClip _endMusic;
     public static AudioClip _starfishPickupSounds;
     public static AudioClip _pufferfishPickupSounds;
     public static AudioClip _winSounds;
@@ -20,6 +22,7 @@ public class SoundManagerScript : MonoBehaviour
      public static AudioClip _giantSquidSpinAttackSound;
     public static AudioClip _giantSquidSpinAttackSpinSound;
     public static AudioClip _giantSquidHurtSound;
+    public static AudioClip _giantSquidDyingSound;
     public static AudioClip _giantSquidEatSound;
     public static AudioSource _audioSource;
     
@@ -30,6 +33,8 @@ public class SoundManagerScript : MonoBehaviour
         _background2Music = Resources.Load<AudioClip> ("Music Space 2");
         _bossMusic = Resources.Load<AudioClip> ("Boss Music");
         _menuMusic = Resources.Load<AudioClip> ("Menu Music");
+        _winGameMusic = Resources.Load<AudioClip> ("Win Game Music");
+        _endMusic = Resources.Load<AudioClip> ("End Music");
         _dieSounds = Resources.Load<AudioClip> ("Death");
         _starfishPickupSounds = Resources.Load<AudioClip> ("StarfishPickup");
         _winSounds = Resources.Load<AudioClip> ("Win");
@@ -44,6 +49,7 @@ public class SoundManagerScript : MonoBehaviour
         _giantSquidSpinAttackSpinSound = Resources.Load<AudioClip> ("GiantSquidSpinAttackSpin");
         _giantSquidHurtSound = Resources.Load<AudioClip> ("GiantSquidHurt");
         _giantSquidEatSound = Resources.Load<AudioClip> ("GiantSquidEat");
+        _giantSquidDyingSound = Resources.Load<AudioClip> ("GiantSquidDying");
 
         _audioSource = GetComponent<AudioSource> ();
     }
@@ -78,6 +84,9 @@ public class SoundManagerScript : MonoBehaviour
             case "Giant Squid Eat":
                 _audioSource.PlayOneShot(_giantSquidEatSound);
                 break;
+            case "Giant Squid Dying":
+                _audioSource.PlayOneShot(_giantSquidDyingSound,0.4f);
+                break;
             case "Death":
                 _audioSource.PlayOneShot(_dieSounds);
                 break;
@@ -101,6 +110,15 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "Shrink":
                 _audioSource.PlayOneShot(_shrinkSound);
+                break;
+            case "StopStart":
+                _audioSource.Stop();
+                break;
+            case "WinGame":
+                _audioSource.PlayOneShot(_winGameMusic,0.5f);
+                break;
+            case "End Music":
+                _audioSource.PlayOneShot(_endMusic,0.4f);
                 break;
         }
     }

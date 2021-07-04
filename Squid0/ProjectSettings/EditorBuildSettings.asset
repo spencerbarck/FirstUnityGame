@@ -81,8 +81,35 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 24.unity
     guid: 5b5234990c650344a97a979e79c4e924
   - enabled: 1
-    path: Assets/Scenes/Level 25.unity
-    guid: 85f2002180d9e234880b6f1537bcdb9b
+    path: Assets/Scenes/Level 26.unity
+    guid: 02ebce69737b2fd40ac5ea897d6c2ba3
+  - enabled: 1
+    path: Assets/Scenes/Level 27.unity
+    guid: 0005a04bb5cb6494f9e72727308b1eeb
+  - enabled: 1
+    path: Assets/Scenes/Level 28.unity
+    guid: 783b84e013c76884eb690e90afa782c0
+  - enabled: 1
+    path: Assets/Scenes/Level 29.unity
+    guid: 8c24c8d19d293eb44b2eea2d152cd3f4
+  - enabled: 1
+    path: Assets/Scenes/Level 30.unity
+    guid: 5b0465ca65b5cdd40b8e14e884f5c80d
+  - enabled: 1
+    path: Assets/Scenes/Level 31.unity
+    guid: 5ddcb7ee6a1464245b0f8605e1af53a5
+  - enabled: 1
+    path: Assets/Scenes/Level 32.unity
+    guid: d45894143263539489ca70eb53016eb4
+  - enabled: 1
+    path: Assets/Scenes/Level 33.unity
+    guid: c0caa5c651daf304480458651dd36311
+  - enabled: 1
+    path: Assets/Scenes/Level 34.unity
+    guid: ba2dbad2d16b9e04a812cb6e7dbd42ce
+  - enabled: 1
+    path: Assets/Scenes/Level 35.unity
+    guid: a805f323f37e9954284a4e0864b26bd7
   - enabled: 1
     path: Assets/Scenes/Boss Fight.unity
     guid: 18fecca84206b5b48918c6163d296310

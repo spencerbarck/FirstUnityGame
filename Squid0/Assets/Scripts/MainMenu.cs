@@ -11,7 +11,8 @@ public class MainMenu : MonoBehaviour
     {
         if(!_musicPlaying)
         {
-            SoundManagerScript.PlaySound("Menu Music");
+            if(SceneManager.GetActiveScene().buildIndex==36)SoundManagerScript.PlaySound("End Music");
+            else SoundManagerScript.PlaySound("Menu Music");
             _musicPlaying=true;
         }
     }
@@ -23,6 +24,11 @@ public class MainMenu : MonoBehaviour
     public void LoadNextLevel()
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+    }
+
+    public void LoadMenuLevel()
+    {
+        StartCoroutine(LoadLevel(0));
     }
 
     IEnumerator LoadLevel(int levelIndex)

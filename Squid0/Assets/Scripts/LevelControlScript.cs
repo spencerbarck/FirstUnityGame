@@ -37,13 +37,16 @@ public class LevelControlScript : MonoBehaviour
         _pickups2 = FindObjectsOfType<PorcupinePufferEnemy>();
         _pufferFishCount += _pickups2.Length;
 
-        _shrimp = FindObjectsOfType<JumboShrimpEnemy>();
-        foreach(JumboShrimpEnemy js in _shrimp)
+        if(SceneManager.GetActiveScene().buildIndex==35)
         {
-            js.GetComponent<BoxCollider2D>().enabled=false;
-            js.GetComponent<SpriteRenderer>().enabled=false;
+            _shrimp = FindObjectsOfType<JumboShrimpEnemy>();
+            foreach(JumboShrimpEnemy js in _shrimp)
+            {
+                js.GetComponent<BoxCollider2D>().enabled=false;
+                js.GetComponent<SpriteRenderer>().enabled=false;
+            }
+            _shrimpCount = _shrimp.Length;
         }
-        _shrimpCount = _shrimp.Length;
 
         _player = FindObjectOfType<SquidPlayer>();
         _winLoseText.text = "";
@@ -61,7 +64,7 @@ public class LevelControlScript : MonoBehaviour
         if(_musicPlaying==false)
         {
             _musicPlaying=true;
-            if(SceneManager.GetActiveScene().buildIndex == 26)SoundManagerScript.PlaySound("Boss Music");
+            if(SceneManager.GetActiveScene().buildIndex == 35)SoundManagerScript.PlaySound("Boss Music");
             else
             {
                 if(SceneManager.GetActiveScene().buildIndex%2 == 0){  
@@ -170,6 +173,7 @@ public class LevelControlScript : MonoBehaviour
 
     public void SpawnShrimp()
     {
+        if(SceneManager.GetActiveScene().buildIndex!=35)return;
         foreach(JumboShrimpEnemy js in _shrimp)
         {
             if(js == null)

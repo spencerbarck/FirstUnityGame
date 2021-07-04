@@ -20,8 +20,10 @@ public class SquidPlayer : MonoBehaviour
     private float _shrinkDeathTimer;
     [SerializeField]
     private bool _insideBoss;
-
     private LevelControlScript _levelControl;
+    public Animator _squidAnimator;
+    public PolygonCollider2D _squidCollider;
+    public PolygonCollider2D _squidColliderLarge;
     public float getSpeed()
     {
         return _speed;
@@ -41,6 +43,7 @@ public class SquidPlayer : MonoBehaviour
 
     private void OnEnable()
     {
+        _squidColliderLarge.enabled=false;
         _input.Squid.Fire.Enable();
         _input.Squid.Fire.performed += HandleFire;
 
@@ -186,6 +189,7 @@ public class SquidPlayer : MonoBehaviour
         }
         else if(collision.collider.GetComponent<GiantSquidBoss>() != null)
         {
+
             if(collision.collider.GetComponent<GiantSquidBoss>()._isDead)
             {
                 SoundManagerScript.PlaySound("Giant Squid Eat");
@@ -197,10 +201,10 @@ public class SquidPlayer : MonoBehaviour
                 {
                     if(_isLarge)
                     {
-                        _insideBoss = true;
-                        Shrink();
                         SoundManagerScript.PlaySound("Giant Squid Hurt");
                         collision.collider.GetComponent<GiantSquidBoss>().ReduceHealth();
+                        _insideBoss = true;
+                        Shrink();
 
                     }
                     else
@@ -242,17 +246,29 @@ public class SquidPlayer : MonoBehaviour
     {
         _levelControl.SpawnShrimp();
         Vector2 characterScale = transform.localScale / 2;
-        transform.localScale = characterScale;
         _sizeFactor--;
-        if(_sizeFactor==1)_isLarge=false;
+        if(_sizeFactor==1)
+        {
+            _squidColliderLarge.enabled=false;
+            _squidCollider.enabled=true;
+            _squidAnimator.SetBool("IsLarge",false);
+            _isLarge=false;
+        }
+        else
+        {
+            transform.localScale = characterScale;
+        }
         SoundManagerScript.PlaySound("Shrink");
     }
 
     private void Enlarge()
     {
         Vector2 characterScale = transform.localScale * 2;
-        transform.localScale = characterScale;
+        if(_isLarge)transform.localScale = characterScale;
         transform.eulerAngles = new Vector3(0,0,0);
+        _squidColliderLarge.enabled=true;
+        _squidCollider.enabled=false;
+        _squidAnimator.SetBool("IsLarge",true);
         _isLarge=true;
         _sizeFactor++;
     }

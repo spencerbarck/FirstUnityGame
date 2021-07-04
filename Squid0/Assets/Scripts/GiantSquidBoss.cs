@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GiantSquidBoss : MonoBehaviour
 {
@@ -56,6 +57,7 @@ public class GiantSquidBoss : MonoBehaviour
     public bool _isDead;
     //end health variables
     bool _atStart = true;
+    public Text _helpText;
 
     void OnEnable()
     {
@@ -142,7 +144,10 @@ public class GiantSquidBoss : MonoBehaviour
             }
         }
 
-        if(_isDying)DeathRattle();
+        if(_isDying)
+        {
+            DeathRattle();
+        }
     }
 
     private void SpinTenticleAttack()
@@ -550,18 +555,25 @@ public class GiantSquidBoss : MonoBehaviour
             }
         }
 
-        if(_health<1)_isDying=true;
+        if(_health<1)
+        {
+            _isDying=true;
+            SoundManagerScript.PlaySound("StopStart");
+            SoundManagerScript.PlaySound("WinGame");
+            SoundManagerScript.PlaySound("Giant Squid Dying");
+        }
     }
 
     public void DeathRattle()
     {
+
+        _helpText.text = "";
         if(!_isDead)
-        {  
+        {
             _squidColliderTenticlesUp.enabled=false;
             _squidColliderTenticlesDown.enabled=false;
             transform.Rotate(0,0,0.525f*-1,Space.Self);
             Vector3 currentScale = transform.localScale;
-            Debug.Log(transform.localScale.y);
 
             if(transform.position.y>0)transform.position += new Vector3(0,Time.deltaTime*-5f);
             if(transform.position.y<0)transform.position += new Vector3(0,Time.deltaTime*5f);
@@ -569,7 +581,11 @@ public class GiantSquidBoss : MonoBehaviour
             if(transform.position.x<10)transform.position += new Vector3(Time.deltaTime*5f,0);
 
             if(transform.localScale.y>1f)transform.localScale = new Vector3(currentScale.x*0.9995f,currentScale.y*0.9995f);
-            else _isDead=true;
+            else 
+            {
+                _squidAnimator.SetBool("IsDead",true);
+                _isDead=true;
+            }
         }
         else
         {
