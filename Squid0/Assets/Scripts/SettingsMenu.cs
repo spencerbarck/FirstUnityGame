@@ -9,7 +9,7 @@ public class SettingsMenu : MonoBehaviour
     // Start is called before the first frame update
     public void SetVolume(float volume)
     {
-        _audioMixer.SetFloat("Volume",volume);
+        _audioMixer.SetFloat("Volume", Mathf.Log10(volume) * 20); 
     }
 
     public void SetFullScreen (bool isFullscreen)

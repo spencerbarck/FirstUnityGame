@@ -2133,7 +2133,7 @@ Transform:
   - {fileID: 1253194349}
   - {fileID: 214938016}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &703927400
 GameObject:
@@ -2180,7 +2180,7 @@ Transform:
   - {fileID: 238069388}
   - {fileID: 168679475}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &784191595
 PrefabInstance:
@@ -3408,7 +3408,7 @@ Transform:
   - {fileID: 1908080843}
   - {fileID: 925842177}
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1094857291
 PrefabInstance:
@@ -3883,7 +3883,7 @@ Transform:
   - {fileID: 133295750}
   - {fileID: 1975091933}
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1196043962
 PrefabInstance:
@@ -5643,7 +5643,7 @@ Transform:
   - {fileID: 502008668}
   - {fileID: 320902859}
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1748185237
 PrefabInstance:
@@ -6772,7 +6772,7 @@ AudioSource:
   m_GameObject: {fileID: 2060212845}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f713b34a63b8a404ab3b2544e0b5b627, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
