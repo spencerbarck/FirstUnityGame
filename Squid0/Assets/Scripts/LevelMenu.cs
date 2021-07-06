@@ -20,15 +20,15 @@ public class LevelMenu : MonoBehaviour
         _maxLevel=SaveSystem.LoadPlayer().level;
         Debug.Log(_maxLevel + " > " + _levelNumber);
         _text = GetComponent<TextMeshProUGUI>();
-        if(_levelNumber>_maxLevel)
-        {
-            _text.text = "???";
-            this.gameObject.GetComponentInParent<Button>().interactable=false;
-        }
-        else{
-            if(_isBoss) _text.text = "Boss Level";
+        //if(_levelNumber>_maxLevel)
+        //{
+            //_text.text = "???";
+            //this.gameObject.GetComponentInParent<Button>().interactable=false;
+        //}
+        //else{
+            if(_isBoss) _text.text = "Boss Fight";
             else _text.text ="Level "+_levelNumber;
-        }
+        //}
     }
     public void LoadThisLevel()
     {
