@@ -112,7 +112,7 @@ public class SoundManagerScript : MonoBehaviour
                 _audioSource.PlayOneShot(_pearlPickupSound);
                 break;
             case "PearlPickupMusic":
-                _audioSource.PlayOneShot(_pearlPickupMusic,0.5f);
+                _audioSource.PlayOneShot(_pearlPickupMusic,0.125f);
                 break;
             case "ShrimpPickup":
                 _audioSource.PlayOneShot(_shrimpPickupSound);
@@ -124,7 +124,7 @@ public class SoundManagerScript : MonoBehaviour
                 _audioSource.Stop();
                 break;
             case "WinGame":
-                _audioSource.PlayOneShot(_winGameMusic,0.5f);
+                _audioSource.PlayOneShot(_winGameMusic,0.20f);
                 break;
             case "End Music":
                 _audioSource.PlayOneShot(_endMusic,0.4f);

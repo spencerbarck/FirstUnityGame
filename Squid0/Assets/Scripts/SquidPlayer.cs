@@ -222,7 +222,7 @@ public class SquidPlayer : MonoBehaviour
             (collision.collider.GetComponent<CrabEnemy>() != null))&&_isLarge)
         {
             Shrink();
-            Destroy(collision.collider.gameObject);
+            //Destroy(collision.collider.GetComponent<CrabEnemy>().gameObject);
         }
         else if((collision.collider.GetComponent<TunaObject>() != null)&&_sizeFactor>2)
         {

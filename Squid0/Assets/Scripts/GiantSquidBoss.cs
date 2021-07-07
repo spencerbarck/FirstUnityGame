@@ -25,9 +25,9 @@ public class GiantSquidBoss : MonoBehaviour
     //end timer variables
 
     //speed variables
-    [SerializeField] float _speed = -10;
+    [SerializeField] float _speed = -5;
     float _initialSpeed;
-    float _tiltSpeed = 0.05f;
+    float _tiltSpeed = 30f;
     //end speed variables
 
     //movement variables
@@ -81,7 +81,6 @@ public class GiantSquidBoss : MonoBehaviour
         
         if(!_isDying){
             //tilt timer count up and stop
-            _tiltTimer+=Time.deltaTime;
             if(!_attackChosen)
             {
                 _randomAttack=_lastAttack;
@@ -201,7 +200,7 @@ public class GiantSquidBoss : MonoBehaviour
                 {
                     if((transform.rotation.eulerAngles.z>315.0f)||(transform.rotation.eulerAngles.z<=45f))
                     {
-                        transform.Rotate(0,0,0.15f*-1,Space.Self); 
+                        transform.Rotate(0,0,Time.deltaTime*75f*-1,Space.Self); 
                     }
                     else
                     {
@@ -214,7 +213,7 @@ public class GiantSquidBoss : MonoBehaviour
                 {
                     if((transform.rotation.eulerAngles.z>225.0f))
                     {
-                        transform.Rotate(0,0,0.15f*-1,Space.Self); 
+                        transform.Rotate(0,0,Time.deltaTime*75f*-1,Space.Self); 
                     }
                     else
                     {
@@ -227,7 +226,7 @@ public class GiantSquidBoss : MonoBehaviour
                 {
                     if((transform.rotation.eulerAngles.z>135.0f))
                     {
-                        transform.Rotate(0,0,0.15f*-1,Space.Self); 
+                        transform.Rotate(0,0,Time.deltaTime*75f*-1,Space.Self); 
                     }
                     else
                     {
@@ -240,7 +239,7 @@ public class GiantSquidBoss : MonoBehaviour
                 {
                     if((transform.rotation.eulerAngles.z>45.0f))
                     {
-                        transform.Rotate(0,0,0.15f*-1,Space.Self); 
+                        transform.Rotate(0,0,Time.deltaTime*75f*-1,Space.Self); 
                     }
                     else
                     {
@@ -255,7 +254,7 @@ public class GiantSquidBoss : MonoBehaviour
                     {
                         if(transform.rotation.eulerAngles.z<=45f)
                         {
-                            transform.Rotate(0,0,0.15f*-1,Space.Self); 
+                            transform.Rotate(0,0,Time.deltaTime*75f*-1,Space.Self); 
                         }
                         else _atStart=true;
                     }
@@ -284,6 +283,7 @@ public class GiantSquidBoss : MonoBehaviour
 
     private void LargeTiltUpAttack()
     {
+        _tiltTimer+=Time.deltaTime;
         if(_tiltTimer<=_tiltTime)
         {
             LargeTilt();
@@ -307,6 +307,7 @@ public class GiantSquidBoss : MonoBehaviour
 
     private void SmallTiltLeftAttack()
     {
+        _tiltTimer+=Time.deltaTime;
         //execute a small 45 degree tilt before attack
         if(_tiltTimer<=_tiltTime)
         {
@@ -336,15 +337,16 @@ public class GiantSquidBoss : MonoBehaviour
 
     private void FlipClockwisePointLeft()
     {
-        if((transform.rotation.eulerAngles.z<175)||(transform.rotation.eulerAngles.z>185)) transform.Rotate(0,0,0.3f*-1,Space.Self); 
+        if((transform.rotation.eulerAngles.z<175)||(transform.rotation.eulerAngles.z>185)) transform.Rotate(0,0,Time.deltaTime*75f*-1,Space.Self); 
         else transform.eulerAngles = new Vector3(0,0,180.0f);
     }
 
     private void FlipCounterClockwisePointRight()
     {
-        if(transform.rotation.eulerAngles.z>0)
+        Debug.Log(transform.rotation.eulerAngles.z);
+        if(transform.rotation.eulerAngles.z>30)
         {
-            transform.Rotate(0,0,-0.3f*-1,Space.Self);
+            transform.Rotate(0,0,Time.deltaTime*-75f*-1,Space.Self);
         } 
         else transform.eulerAngles = new Vector3(0,0,0);
     }
@@ -355,7 +357,7 @@ public class GiantSquidBoss : MonoBehaviour
         {
             if((transform.rotation.eulerAngles.z>315.0f)||(transform.rotation.eulerAngles.z<180.0f))
             {
-                transform.Rotate(0,0,_tiltSpeed*-1,Space.Self); 
+                transform.Rotate(0,0,Time.deltaTime*_tiltSpeed*-1,Space.Self); 
             }
             else _tiltingUp=false;
         }
@@ -364,7 +366,7 @@ public class GiantSquidBoss : MonoBehaviour
         {
             if((transform.rotation.eulerAngles.z<45.0f)||(transform.rotation.eulerAngles.z>180.0f))
             {
-                transform.Rotate(0,0,_tiltSpeed,Space.Self); 
+                transform.Rotate(0,0,Time.deltaTime*_tiltSpeed,Space.Self); 
             }
             else _tiltingUp=true;
         }
@@ -380,7 +382,7 @@ public class GiantSquidBoss : MonoBehaviour
         {
             if(transform.rotation.eulerAngles.z<90.0f)
             {
-                transform.Rotate(0,0,0.1f,Space.Self); 
+                transform.Rotate(0,0,Time.deltaTime*30f,Space.Self); 
             }
             else
             {
@@ -391,11 +393,11 @@ public class GiantSquidBoss : MonoBehaviour
         {
             if((transform.rotation.eulerAngles.z<112.5f)&&_tiltingUp)
             {
-                transform.Rotate(0,0,0.0575f,Space.Self);
+                transform.Rotate(0,0,Time.deltaTime*30f,Space.Self);
             }
             if((transform.rotation.eulerAngles.z>67.5f)&&!_tiltingUp)
             {
-                transform.Rotate(0,0,0.0575f*-1,Space.Self); 
+                transform.Rotate(0,0,Time.deltaTime*30f*-1,Space.Self); 
             }
             if(transform.rotation.eulerAngles.z>=112.5f)_tiltingUp=false;
             if(transform.rotation.eulerAngles.z<=67.5f)_tiltingUp=true;
@@ -527,7 +529,7 @@ public class GiantSquidBoss : MonoBehaviour
             transform.position = new Vector3(0,0);
             if((transform.rotation.eulerAngles.z>0.0f)&&(transform.rotation.eulerAngles.z<180.0f))
             {
-                transform.Rotate(0,0,-0.1f,Space.Self);
+                transform.Rotate(0,0,Time.deltaTime*75*-1f,Space.Self);
             }
             else
             {
@@ -588,7 +590,7 @@ public class GiantSquidBoss : MonoBehaviour
         {
             _squidColliderTenticlesUp.enabled=false;
             _squidColliderTenticlesDown.enabled=false;
-            transform.Rotate(0,0,0.525f*-1,Space.Self);
+            transform.Rotate(0,0,Time.deltaTime*75*-1,Space.Self);
             Vector3 currentScale = transform.localScale;
 
             if(transform.position.y>0)transform.position += new Vector3(0,Time.deltaTime*-5f);
@@ -596,7 +598,9 @@ public class GiantSquidBoss : MonoBehaviour
             if(transform.position.x>10)transform.position += new Vector3(Time.deltaTime*-5f,0);
             if(transform.position.x<10)transform.position += new Vector3(Time.deltaTime*5f,0);
 
-            if(transform.localScale.y>1f)transform.localScale = new Vector3(currentScale.x*0.9995f,currentScale.y*0.9995f);
+            Debug.Log(Time.deltaTime);
+
+            if(transform.localScale.y>1f)transform.localScale = new Vector3(currentScale.x*(1-Time.deltaTime),currentScale.y*(1-Time.deltaTime));
             else 
             {
                 _squidAnimator.SetBool("IsDead",true);

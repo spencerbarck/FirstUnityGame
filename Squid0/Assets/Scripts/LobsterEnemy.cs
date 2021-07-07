@@ -60,4 +60,11 @@ public class LobsterEnemy : MonoBehaviour
 
         _currentPosition=transform.position;
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.GetComponent<SquidPlayer>() != null)
+        {
+            Destroy(gameObject);
+        }
+    }
 }
